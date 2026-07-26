@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Server Rules — Monkey Playzone | FiveM PvP Server</title>
+  <meta name="description" content="Read the official Monkey Playzone server rules before joining. Know the code — break it and face the consequences." />
+  <link rel="icon" href="assets/favicon.png" type="image/png" />
+  <link href="https://fonts.googleapis.com/css2?family=Anton&family=Bebas+Neue&family=Rajdhani:wght@400;500;600;700&family=Barlow:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="css/pages.css" />
+</head>
+<body>
+  <div class="noise-overlay"></div>
+
+  <!-- UNIFORM TOP NAVIGATION HEADER -->
+  <header class="top-nav" id="navbar" style="position:fixed; top:0; left:0; width:100%; z-index:1000; display:flex; justify-content:space-between; align-items:center; padding:18px 40px; background:linear-gradient(180deg, rgba(10,5,5,0.95) 0%, rgba(10,5,5,0.7) 100%); backdrop-filter:blur(12px); border-bottom:1px solid rgba(212,161,76,0.25);">
+    <a href="index.html#hero" class="top-nav-logo" style="display:flex; align-items:center; gap:12px; text-decoration:none;">
+      <img src="assets/logo.png" alt="Monkey Playzone" style="width:44px; height:44px; object-fit:cover; border-radius:50%; border:1px solid var(--gold);" />
+      <span style="font-family:'Bebas Neue', sans-serif; font-size:1.4rem; letter-spacing:0.12em; color:var(--cream);">MONKEY PLAYZONE</span>
+    </a>
+    <nav class="top-nav-links" style="display:flex; align-items:center; gap:8px;">
+      <a href="index.html" class="nav-link" style="font-family:'Bebas Neue', sans-serif; font-size:1.15rem; letter-spacing:0.16em; text-transform:uppercase; color:rgba(242,230,217,0.8); text-decoration:none; padding:6px 14px;">Home</a>
+      <div style="width:1px; height:14px; background:rgba(212,161,76,0.3);"></div>
+      <a href="rules.html" class="nav-link active" style="font-family:'Bebas Neue', sans-serif; font-size:1.15rem; letter-spacing:0.16em; text-transform:uppercase; color:#D4A14C; text-decoration:none; padding:6px 14px;">Rules</a>
+      <div style="width:1px; height:14px; background:rgba(212,161,76,0.3);"></div>
+      <a href="arena.html" class="nav-link" style="font-family:'Bebas Neue', sans-serif; font-size:1.15rem; letter-spacing:0.16em; text-transform:uppercase; color:rgba(242,230,217,0.8); text-decoration:none; padding:6px 14px;">Arena</a>
+      <div style="width:1px; height:14px; background:rgba(212,161,76,0.3);"></div>
+      <a href="team.html" class="nav-link" style="font-family:'Bebas Neue', sans-serif; font-size:1.15rem; letter-spacing:0.16em; text-transform:uppercase; color:rgba(242,230,217,0.8); text-decoration:none; padding:6px 14px;">Team</a>
+      <div style="width:1px; height:14px; background:rgba(212,161,76,0.3);"></div>
+      <a href="index.html#gallery" class="nav-link" style="font-family:'Bebas Neue', sans-serif; font-size:1.15rem; letter-spacing:0.16em; text-transform:uppercase; color:rgba(242,230,217,0.8); text-decoration:none; padding:6px 14px;">Gallery</a>
+      <div style="width:1px; height:14px; background:rgba(212,161,76,0.3);"></div>
+      <a href="index.html#faq" class="nav-link" style="font-family:'Bebas Neue', sans-serif; font-size:1.15rem; letter-spacing:0.16em; text-transform:uppercase; color:rgba(242,230,217,0.8); text-decoration:none; padding:6px 14px;">FAQ</a>
+    </nav>
+    <a href="cfx://connect/monkeyplayzone" class="btn btn-primary btn-sm" style="clip-path: polygon(6px 0, 100% 0, calc(100% - 6px) 100%, 0 100%);">
+      ⚡ CONNECT
+    </a>
+  </header>
+
+  <div class="mobile-menu-overlay" id="mobileMenuOverlay">
+    <div class="mobile-menu-inner">
+      <button class="mobile-menu-close" id="mobileMenuClose">✕</button>
+      <img src="assets/logo.png" alt="Logo" class="mobile-logo" />
+      <ul class="mobile-nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="rules.html">Rules</a></li>
+        <li><a href="arena.html">Arena</a></li>
+        <li><a href="team.html">Team</a></li>
+        <li><a href="gallery.html">Gallery</a></li>
+        <li><a href="faq.html">FAQ</a></li>
+      </ul>
+      <a href="cfx://connect/monkeyplayzone" class="btn btn-primary mobile-connect-btn">⚡ Connect Now</a>
+    </div>
+  </div>
+
+  <section class="page-hero">
+    <div class="container">
+      <div class="page-hero-inner">
+        <span class="page-hero-eyebrow">Rules of Engagement</span>
+        <h1 class="page-hero-title">Know the <span class="text-red">Code</span></h1>
+        <p class="page-hero-sub">Break the rules, face the consequences. There are no second chances in the jungle.</p>
+      </div>
+    </div>
+  </section>
+
+  <main class="rules-main">
+    <div class="container">
+
+      <!-- GENERAL RULES -->
+      <div class="rules-section">
+        <h2 class="rules-section-title">General Conduct</h2>
+        <div class="rules-full-list">
+          <div class="rules-full-item">
+            <span class="rules-full-num">01</span>
+            <div class="rules-full-content">
+              <h4>No Hacking, Cheating, or Exploiting</h4>
+              <p>Use of any modified client, cheat engine, external software, or exploiting game bugs to gain an unfair advantage is strictly prohibited. Hardware ban, permanent, no appeal.</p>
+              <span class="rules-severity ban">⚠ Permanent Ban</span>
+            </div>
+          </div>
+          <div class="rules-full-item">
+            <span class="rules-full-num">02</span>
+            <div class="rules-full-content">
+              <h4>No Racism, Hate Speech, or Harassment</h4>
+              <p>This server has zero tolerance for racist language, hate speech, sexual harassment, or targeted abuse. Applies in-game, in Discord, and all associated channels.</p>
+              <span class="rules-severity ban">⚠ Permanent Ban</span>
+            </div>
+          </div>
+          <div class="rules-full-item">
+            <span class="rules-full-num">03</span>
+            <div class="rules-full-content">
+              <h4>No Doxxing or Real-Life Threats</h4>
+              <p>Sharing personal information of other players, or making real-world threats, results in immediate report to authorities and permanent platform ban.</p>
+              <span class="rules-severity ban">⚠ Permanent Ban</span>
+            </div>
+          </div>
+          <div class="rules-full-item">
+            <span class="rules-full-num">04</span>
+            <div class="rules-full-content">
+              <h4>Respect Admin Decisions</h4>
+              <p>Admin decisions are final during situations. If you believe a decision was unfair, use the appeal channel — do not argue in-game. Arguing publicly results in extended punishment.</p>
+              <span class="rules-severity warn">△ Temp Ban</span>
+            </div>
+          </div>
+          <div class="rules-full-item">
+            <span class="rules-full-num">05</span>
+            <div class="rules-full-content">
+              <h4>English Only in Main Channels</h4>
+              <p>English is required in public voice and text channels so admins can moderate effectively. Other languages are permitted in private party chats.</p>
+              <span class="rules-severity warn">△ Warning</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- PVP RULES -->
+      <div class="rules-section">
+        <h2 class="rules-section-title">PvP Rules</h2>
+        <div class="rules-full-list">
+          <div class="rules-full-item">
+            <span class="rules-full-num">06</span>
+            <div class="rules-full-content">
+              <h4>No RDM — Random Death Match</h4>
+              <p>You must have a valid, established RP reason to engage another player in combat. Killing on sight without prior RP interaction or being in an active PvP zone is RDM.</p>
+              <span class="rules-severity warn">△ 24h Ban + Kill Review</span>
+            </div>
+          </div>
+          <div class="rules-full-item">
+            <span class="rules-full-num">07</span>
+            <div class="rules-full-content">
+              <h4>Respect PvP Zone Boundaries</h4>
+              <p>PvP combat is permitted only within designated red zones. Check the map for current active zones. Zone boundaries are enforced by admin and automated systems.</p>
+              <span class="rules-severity warn">△ 48h Ban</span>
+            </div>
+          </div>
+          <div class="rules-full-item">
+            <span class="rules-full-num">08</span>
+            <div class="rules-full-content">
+              <h4>No Camping Spawn Points</h4>
+              <p>Camping or griefing designated spawn areas, hospitals, or safe zones is prohibited. You may hold safe zone perimeters but cannot engage players inside.</p>
+              <span class="rules-severity warn">△ 12h Ban</span>
+            </div>
+          </div>
+          <div class="rules-full-item">
+            <span class="rules-full-num">09</span>
+            <div class="rules-full-content">
+              <h4>No Vehicle Deathmatch (VDM)</h4>
+              <p>Using vehicles as weapons outside designated vehicle combat zones is prohibited. Aircraft griefing — flying over safe zones to shoot down — is VDM.</p>
+              <span class="rules-severity warn">△ 24h Ban</span>
+            </div>
+          </div>
+          <div class="rules-full-item">
+            <span class="rules-full-num">10</span>
+            <div class="rules-full-content">
+              <h4>Loot Rules</h4>
+              <p>You may only loot a player you personally killed. Third-party looting while a fight is in progress is not permitted. Looting from safe zones is prohibited.</p>
+              <span class="rules-severity kick">▸ Kick + Loot Return</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- RP RULES -->
+      <div class="rules-section">
+        <h2 class="rules-section-title">Roleplay Standards</h2>
+        <div class="rules-full-list">
+          <div class="rules-full-item">
+            <span class="rules-full-num">11</span>
+            <div class="rules-full-content">
+              <h4>Value Your Life (FearRP)</h4>
+              <p>If you are outnumbered or have a weapon pointed at your head, you must comply or face realistic consequences. Disregarding imminent death threats breaks immersion.</p>
+              <span class="rules-severity warn">△ Warning + RP Review</span>
+            </div>
+          </div>
+          <div class="rules-full-item">
+            <span class="rules-full-num">12</span>
+            <div class="rules-full-content">
+              <h4>No Metagaming</h4>
+              <p>Do not use out-of-character (OOC) information in roleplay. This includes using Discord/streams to locate enemies or gather info your character would not know.</p>
+              <span class="rules-severity warn">△ 48h Ban</span>
+            </div>
+          </div>
+          <div class="rules-full-item">
+            <span class="rules-full-num">13</span>
+            <div class="rules-full-content">
+              <h4>No Powergaming</h4>
+              <p>Roleplaying actions that would be physically impossible, or forcing other players into outcomes without giving them a chance to respond, is not permitted.</p>
+              <span class="rules-severity warn">△ Warning</span>
+            </div>
+          </div>
+          <div class="rules-full-item">
+            <span class="rules-full-num">14</span>
+            <div class="rules-full-content">
+              <h4>Stay In Character</h4>
+              <p>Remain in character during active RP scenarios. Break character with /ooc prefix only. Do not break RP to argue about rules — that goes in tickets post-scenario.</p>
+              <span class="rules-severity kick">▸ Kick (Repeated = Ban)</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+    </div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-top">
+      <div class="container">
+        <div class="footer-grid">
+          <div class="footer-brand">
+            <img src="assets/logo.png" alt="Monkey Playzone" class="footer-logo" />
+            <p class="footer-tagline">Welcome to the Jungle.</p>
+            <p class="footer-desc">The most ruthless hardcore FiveM PvP server. Built by veterans, for warriors.</p>
+            <div class="footer-socials">
+              <a href="#" class="social-icon" title="Twitter">𝕏</a>
+              <a href="#" class="social-icon" title="Discord">💬</a>
+              <a href="#" class="social-icon" title="YouTube">▶</a>
+              <a href="#" class="social-icon" title="TikTok">♪</a>
+            </div>
+          </div>
+          <div class="footer-col">
+            <h4 class="footer-col-title">Navigation</h4>
+            <ul class="footer-links">
+              <li><a href="index.html">Home</a></li>
+              <li><a href="rules.html">Rules</a></li>
+        <li><a href="arena.html">Arena</a></li>
+            </ul>
+          </div>
+          <div class="footer-col">
+            <h4 class="footer-col-title">Community</h4>
+            <ul class="footer-links">
+              <li><a href="gallery.html">Gallery</a></li>
+              <li><a href="team.html">Team</a></li>
+              <li><a href="faq.html">FAQ</a></li>
+            </ul>
+          </div>
+          <div class="footer-col">
+            <h4 class="footer-col-title">Connect</h4>
+            <p class="footer-ip">cfx.re/join/xllrkdx</p>
+            <a href="cfx://connect/monkeyplayzone" class="btn btn-primary btn-sm">⚡ Join Server</a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div class="container">
+        <p>© 2024 Monkey Playzone. All rights reserved. Not affiliated with Rockstar Games or FiveM.</p>
+      </div>
+    </div>
+  </footer>
+
+  <div class="sticky-connect" id="stickyConnect">
+    <a href="cfx://connect/monkeyplayzone" class="btn btn-primary btn-block">⚡ Connect to Server</a>
+  </div>
+
+  <script src="js/main.js"></script>
+</body>
+</html>

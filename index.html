@@ -1,0 +1,398 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Monkey Playzone — Welcome to the Jungle | FiveM PvP Server</title>
+  <meta name="description" content="The most brutal FiveM PvP experience in Los Santos. Custom weapons, faction warfare, no rules, no mercy." />
+  <link rel="icon" href="assets/logo.png" type="image/png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Anton&family=Rajdhani:wght@400;500;600;700&family=Barlow:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="css/home.css" />
+  <link rel="stylesheet" href="css/pages.css" />
+  <style>
+    /* Uniform Top Header Overrides */
+    .top-nav {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      z-index: 1000;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 18px 40px;
+      background: linear-gradient(180deg, rgba(10, 5, 5, 0.95) 0%, rgba(10, 5, 5, 0.7) 100%);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid rgba(212, 161, 76, 0.25);
+      transition: all 0.3s ease;
+    }
+
+    .top-nav-inner {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+
+    .top-nav-logo {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      text-decoration: none;
+    }
+
+    .top-nav-logo img {
+      width: 44px;
+      height: 44px;
+      object-fit: cover;
+      border-radius: 50%;
+      border: 1px solid var(--gold);
+    }
+
+    .top-nav-logo span {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 1.4rem;
+      letter-spacing: 0.12em;
+      color: var(--cream);
+    }
+
+    .top-nav-links {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .nav-link {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 1.15rem;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: rgba(242, 230, 217, 0.8);
+      text-decoration: none;
+      padding: 6px 14px;
+      transition: all 0.25s ease;
+    }
+
+    .nav-link:hover, .nav-link.active {
+      color: #D4A14C;
+      text-shadow: 0 0 12px rgba(212, 161, 76, 0.5);
+    }
+
+    .nav-sep {
+      width: 1px;
+      height: 14px;
+      background: rgba(212, 161, 76, 0.3);
+      flex-shrink: 0;
+    }
+
+    /* Landing Section Full Height */
+    .hero-landing {
+      position: relative;
+      width: 100%;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+      background: #0a0505;
+      padding-top: 80px;
+    }
+
+    .bg-photo {
+      position: absolute;
+      inset: 0;
+      background-image: url('assets/jungle-bg.jpg');
+      background-size: cover;
+      background-position: center center;
+      background-repeat: no-repeat;
+      transform: scale(1.04);
+      animation: subtleZoom 18s ease-in-out infinite alternate;
+    }
+
+    @keyframes subtleZoom {
+      from { transform: scale(1.04); }
+      to   { transform: scale(1.10); }
+    }
+
+    .bg-overlay {
+      position: absolute;
+      inset: 0;
+      background:
+        radial-gradient(ellipse 70% 60% at 50% 50%, rgba(0,0,0,0.30) 0%, rgba(0,0,0,0.72) 60%, rgba(0,0,0,0.92) 100%),
+        linear-gradient(180deg, rgba(0,0,0,0.75) 0%, rgba(0,0,0,0.2) 50%, rgba(26,13,13,1) 100%);
+    }
+
+    .hero-content-centered {
+      position: relative;
+      z-index: 10;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      padding: 40px 20px;
+    }
+
+    .hero-centered-logo {
+      width: clamp(140px, 18vw, 200px);
+      height: clamp(140px, 18vw, 200px);
+      object-fit: cover;
+      border-radius: 50%;
+      margin-bottom: clamp(20px, 3vh, 32px);
+      filter: drop-shadow(0 0 24px rgba(199,44,44,0.65)) drop-shadow(0 0 50px rgba(199,44,44,0.25));
+      animation: logoFloat 5s ease-in-out infinite;
+    }
+
+    @keyframes logoFloat {
+      0%, 100% { transform: translateY(0px); }
+      50%       { transform: translateY(-6px); }
+    }
+
+    .hero-centered-headline {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: clamp(32px, 5vw, 64px);
+      letter-spacing: 0.22em;
+      color: #D4A14C;
+      text-transform: uppercase;
+      line-height: 1;
+      margin-bottom: clamp(14px, 2vh, 22px);
+      text-shadow: 0 0 40px rgba(212,161,76,0.35), 0 2px 6px rgba(0,0,0,0.8);
+    }
+
+    .hero-centered-subline {
+      font-family: 'Barlow', sans-serif;
+      font-weight: 300;
+      font-size: clamp(14px, 1.4vw, 18px);
+      letter-spacing: 0.04em;
+      color: rgba(242,230,217,0.75);
+      line-height: 1.7;
+      max-width: 440px;
+      margin-bottom: clamp(28px, 4vh, 44px);
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    @media (max-width: 900px) {
+      .top-nav {
+        padding: 14px 18px;
+      }
+      .top-nav-logo span { display: none; }
+      .nav-link { font-size: 1rem; padding: 4px 8px; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NOISE OVERLAY -->
+  <div class="noise-overlay"></div>
+
+  <!-- UNIFORM TOP NAVIGATION HEADER -->
+  <header class="top-nav" id="navbar">
+    <a href="#hero" class="top-nav-logo">
+      <img src="assets/logo.png" alt="Monkey Playzone" />
+      <span>MONKEY PLAYZONE</span>
+    </a>
+    <nav class="top-nav-links">
+      <a href="index.html" class="nav-link">Home</a>
+      <div class="nav-sep"></div>
+      <a href="rules.html" class="nav-link">Rules</a>
+      <div class="nav-sep"></div>
+      <a href="arena.html" class="nav-link">Arena</a>
+      <div class="nav-sep"></div>
+      <a href="team.html" class="nav-link">Team</a>
+      <div class="nav-sep"></div>
+      <a href="#gallery" class="nav-link">Gallery</a>
+      <div class="nav-sep"></div>
+      <a href="#faq" class="nav-link">FAQ</a>
+    </nav>
+    <a href="cfx://connect/monkeyplayzone" class="btn btn-primary btn-sm" style="clip-path: polygon(6px 0, 100% 0, calc(100% - 6px) 100%, 0 100%);">
+      ⚡ CONNECT
+    </a>
+  </header>
+
+  <!-- 1. HERO LANDING SECTION -->
+  <section class="hero-landing" id="hero">
+    <div class="bg-photo"></div>
+    <div class="bg-overlay"></div>
+    <div class="hero-content-centered">
+      <img src="assets/logo.png" alt="Monkey Playzone" class="hero-centered-logo" />
+      <h1 class="hero-centered-headline">Welcome to the Jungle</h1>
+      <p class="hero-centered-subline">
+        The most brutal FiveM PvP experience in Los Santos.<br />
+        No rules. No mercy. Only the strong survive.
+      </p>
+      <div class="cta-row">
+        <a href="cfx://connect/monkeyplayzone" class="btn btn-primary btn-lg">
+          <span class="btn-icon">⚡</span> Connect Now
+        </a>
+        <a href="https://discord.gg/monkeyplayzone" target="_blank" class="btn btn-outline btn-lg">
+          Join Discord
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- 2. LIVE SERVER STATUS BAR -->
+  <section class="status-bar" id="statusBar">
+    <div class="container">
+      <div class="status-grid">
+        <div class="status-item">
+          <span class="status-label">STATUS</span>
+          <span class="status-value online"><span class="pulse-dot sm"></span>ONLINE</span>
+        </div>
+        <div class="status-divider"></div>
+        <div class="status-item">
+          <span class="status-label">PLAYERS</span>
+          <span class="status-value" id="playerCount">48 / 64</span>
+        </div>
+        <div class="status-divider"></div>
+        <div class="status-item">
+          <span class="status-label">PING</span>
+          <span class="status-value" id="serverPing">22ms</span>
+        </div>
+        <div class="status-divider"></div>
+        <div class="status-item">
+          <span class="status-label">UPTIME</span>
+          <span class="status-value">99.8%</span>
+        </div>
+        <div class="status-divider"></div>
+        <div class="status-item">
+          <span class="status-label">SERVER IP</span>
+          <span class="status-value copy-ip" id="copyIp" title="Click to copy">cfx.re/join/xllrkdx</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 3. WHY MONKEY PLAYZONE / FEATURES -->
+  <section class="features" id="features">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-eyebrow">WHY JOIN US</span>
+        <h2 class="section-title">Built for the <span class="text-red">Battlefield</span></h2>
+        <p class="section-sub">No hand-holding. No casual players. Monkey Playzone is built for those who survive.</p>
+      </div>
+      <div class="features-grid">
+        <div class="feature-card">
+          <div class="feature-icon">⚔️</div>
+          <h3 class="feature-title">Custom PvP Zones</h3>
+          <p class="feature-desc">Dynamic hot zones that rotate every hour. Every match is a new warzone. Control the zone, control the server.</p>
+          <div class="feature-card-border"></div>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon">🛡️</div>
+          <h3 class="feature-title">Active Admins</h3>
+          <p class="feature-desc">24/7 admin presence. Cheaters are banned within minutes. Fair play is enforced — brutally.</p>
+          <div class="feature-card-border"></div>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon">🔫</div>
+          <h3 class="feature-title">Custom Weapons & Vehicles</h3>
+          <p class="feature-desc">Over 50+ custom weapons and vehicles. From jungle machetes to armored technicals — the arsenal is yours.</p>
+          <div class="feature-card-border"></div>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon">🔒</div>
+          <h3 class="feature-title">Anti-Cheat System</h3>
+          <p class="feature-desc">Military-grade anti-cheat with hardware banning. If you cheat, you're gone — permanently.</p>
+          <div class="feature-card-border"></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+
+
+
+
+
+  <!-- 10. GALLERY SECTION -->
+  <section class="gallery-main" id="gallery" style="padding: 100px 0;">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-eyebrow">WAR FOOTAGE</span>
+        <h2 class="section-title">Media <span class="text-red">Gallery</span></h2>
+      </div>
+      <div class="gallery-grid">
+        <div class="gallery-grid-item">
+          <div class="gallery-grid-item-inner" style="background: linear-gradient(135deg, #32000C, #6C001B); height:100%; width:100%;"></div>
+          <div class="gallery-grid-overlay"><span class="gallery-grid-label">Zone Alpha Raid</span></div>
+        </div>
+        <div class="gallery-grid-item">
+          <div class="gallery-grid-item-inner" style="background: linear-gradient(135deg, #7A0F1E, #D4A14C); height:100%; width:100%;"></div>
+          <div class="gallery-grid-overlay"><span class="gallery-grid-label">Faction Standoff</span></div>
+        </div>
+        <div class="gallery-grid-item">
+          <div class="gallery-grid-item-inner" style="background: linear-gradient(135deg, #1A0D0D, #C72C2C); height:100%; width:100%;"></div>
+          <div class="gallery-grid-overlay"><span class="gallery-grid-label">Jungle Ambush</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- 12. FAQ SECTION -->
+  <section class="faq-main" id="faq" style="padding: 100px 0;">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-eyebrow">COMMON QUESTIONS</span>
+        <h2 class="section-title">FAQ</h2>
+      </div>
+      <div class="faq-container">
+        <div class="faq-item">
+          <button class="faq-q">How do I connect to Monkey Playzone?<span class="faq-arrow"></span></button>
+          <div class="faq-a"><div class="faq-a-inner">Open FiveM and search for <strong>cfx.re/join/xllrkdx</strong> or "Monkey Playzone". You must be whitelisted before connecting.</div></div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-q">How long does whitelist review take?<span class="faq-arrow"></span></button>
+          <div class="faq-a"><div class="faq-a-inner">Usually 24–72 hours. You will receive a Discord notification upon approval.</div></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="footer-bottom">
+      <div class="container">
+        <p>© 2024 Monkey Playzone. All rights reserved. Not affiliated with Rockstar Games or FiveM.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+  <script>
+    function handleSubmit(e) {
+      e.preventDefault();
+      document.getElementById('whitelistForm').style.display = 'none';
+      document.getElementById('successMsg').style.display = 'block';
+    }
+
+    // Active nav highlight on scroll
+    window.addEventListener('scroll', () => {
+      const sections = document.querySelectorAll('section[id]');
+      const scrollY = window.pageYOffset;
+
+      sections.forEach(current => {
+        const sectionHeight = current.offsetHeight;
+        const sectionTop = current.offsetTop - 120;
+        const sectionId = current.getAttribute('id');
+        const navLink = document.querySelector('.top-nav-links a[href*=' + sectionId + ']');
+
+        if (navLink) {
+          if (scrollY > sectionTop && scrollY <= sectionTop + sectionHeight) {
+            navLink.classList.add('active');
+          } else {
+            navLink.classList.remove('active');
+          }
+        }
+      });
+    });
+  </script>
+</body>
+</html>

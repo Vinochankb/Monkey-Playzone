@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>FAQ — Monkey Playzone | Common Questions</title>
+  <meta name="description" content="Frequently asked questions about joining Monkey Playzone — how to connect, whitelist, rules, bans, and more." />
+  <link rel="icon" href="assets/favicon.png" type="image/png" />
+  <link href="https://fonts.googleapis.com/css2?family=Anton&family=Bebas+Neue&family=Rajdhani:wght@400;500;600;700&family=Barlow:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="css/pages.css" />
+</head>
+<body>
+  <div class="noise-overlay"></div>
+
+  <nav class="navbar scrolled" id="navbar">
+    <div class="nav-inner container">
+      <a href="index.html" class="nav-logo"><img src="assets/logo.png" alt="Monkey Playzone" class="logo-img" /></a>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="index.html" class="nav-link">Home</a></li>
+        <li><a href="rules.html" class="nav-link">Rules</a></li>
+        <li><a href="arena.html" class="nav-link">Arena</a></li>
+        <li><a href="team.html" class="nav-link">Team</a></li>
+      </ul>
+      <div class="nav-actions">
+        <a href="cfx://connect/monkeyplayzone" class="btn btn-primary btn-connect">⚡ Connect to Server</a>
+        <button class="hamburger" id="hamburger"><span></span><span></span><span></span></button>
+      </div>
+    </div>
+  </nav>
+
+  <div class="mobile-menu-overlay" id="mobileMenuOverlay">
+    <div class="mobile-menu-inner">
+      <button class="mobile-menu-close" id="mobileMenuClose">✕</button>
+      <img src="assets/logo.png" alt="Logo" class="mobile-logo" />
+      <ul class="mobile-nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="rules.html">Rules</a></li>
+        <li><a href="arena.html">Arena</a></li>
+        <li><a href="team.html">Team</a></li>
+        <li><a href="gallery.html">Gallery</a></li>
+        <li><a href="faq.html">FAQ</a></li>
+      </ul>
+      <a href="cfx://connect/monkeyplayzone" class="btn btn-primary mobile-connect-btn">⚡ Connect Now</a>
+    </div>
+  </div>
+
+  <section class="page-hero">
+    <div class="container">
+      <div class="page-hero-inner">
+        <span class="page-hero-eyebrow">Got Questions?</span>
+        <h1 class="page-hero-title">FAQ</h1>
+        <p class="page-hero-sub">Everything you need to know before dropping into the jungle.</p>
+      </div>
+    </div>
+  </section>
+
+  <main class="faq-main">
+    <div class="container">
+      <div class="faq-container">
+
+        <!-- CONNECTING -->
+        <h2 class="faq-category-title">Connecting to the Server</h2>
+
+        <div class="faq-item">
+          <button class="faq-q">How do I connect to Monkey Playzone?<span class="faq-arrow"></span></button>
+          <div class="faq-a"><div class="faq-a-inner">Open FiveM, click on the search bar, and enter <strong style="color:var(--gold);">cfx.re/join/xllrkdx</strong> or simply search "Monkey Playzone" in the server browser. You must have a whitelist approval before connecting. If you try to connect without approval, you'll be queued and automatically rejected.</div></div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-q">What are the PC requirements?<span class="faq-arrow"></span></button>
+          <div class="faq-a"><div class="faq-a-inner">You need to meet FiveM's standard requirements: a licensed copy of GTA V (Steam/Rockstar Launcher), Windows 10 or later, at minimum an Intel i5 / 8GB RAM / GTX 960. For our custom assets to load without lag, we recommend a GTX 1060 or better and an SSD.</div></div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-q">The server keeps disconnecting me. What do I do?<span class="faq-arrow"></span></button>
+          <div class="faq-a"><div class="faq-a-inner">Try the following steps: 1) Clear FiveM cache (Documents/FiveM/FiveM.app/cache). 2) Verify GTA V game files in Rockstar Launcher. 3) Disable VPN if active. 4) Check our #server-status channel in Discord for any ongoing outages. If the issue persists, open a ticket in Discord.</div></div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-q">Is the server available 24/7?<span class="faq-arrow"></span></button>
+          <div class="faq-a"><div class="faq-a-inner">Yes. We maintain a 99.8% uptime SLA on dedicated hardware. Scheduled maintenance windows are announced 48 hours in advance in #announcements. Downtime is typically under 30 minutes.</div></div>
+        </div>
+
+        <!-- WHITELIST -->
+        <h2 class="faq-category-title">Whitelist & Applications</h2>
+
+        <div class="faq-item">
+          <button class="faq-q">How do I apply for whitelist?<span class="faq-arrow"></span></button>
+          <div class="faq-a"><div class="faq-a-inner">Go to our and fill out the application form. You'll need: your Discord username, FiveM character name, FiveM ID, age, RP experience, and agreement to our rules. Applications are reviewed within 24–72 hours.</div></div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-q">My application was rejected. Can I reapply?<span class="faq-arrow"></span></button>
+          <div class="faq-a"><div class="faq-a-inner">Yes, you may reapply after a 7-day waiting period. Review your rejection reason (sent via Discord DM) and address the issues in your new application. Repeated low-effort applications may result in a temporary application ban.</div></div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-q">How long does the whitelist review take?<span class="faq-arrow"></span></button>
+          <div class="faq-a"><div class="faq-a-inner">Typically 24–72 hours. During high traffic periods (after events or announcements) it may take up to 5 days. You'll receive a DM on Discord once a decision is made. Do not ask admins to speed up your review — it will result in automatic rejection.</div></div>
+        </div>
+
+        <!-- RULES & BANS -->
+        <h2 class="faq-category-title">Rules & Bans</h2>
+
+        <div class="faq-item">
+          <button class="faq-q">I was banned. How do I appeal?<span class="faq-arrow"></span></button>
+          <div class="faq-a"><div class="faq-a-inner">Open the #ban-appeals channel in our Discord and create a ticket. Include: your in-game name, ban reason shown, and your explanation. Appeals are reviewed by the Head Admin within 72 hours. Note: permanent bans for cheating are non-appealable.</div></div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-q">What is RDM and why am I banned for it?<span class="faq-arrow"></span></button>
+          <div class="faq-a"><div class="faq-a-inner">RDM (Random Death Match) means killing another player without a valid RP reason or prior engagement. Example: shooting someone you just saw without any interaction = RDM. First offence is typically 24 hours + a kill review. Repeated offences escalate to permanent ban.</div></div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-q">Can I report a player or admin?<span class="faq-arrow"></span></button>
+          <div class="faq-a"><div class="faq-a-inner">Yes. Create a ticket in #support on Discord. Include: player name, date/time, description of incident, and any evidence (screenshots/video). For admin misconduct, reports go directly to the Server Owner (KongBoss) via DM — do not post publicly.</div></div>
+        </div>
+
+        <!-- STORE -->
+        <h2 class="faq-category-title">Store & Donations</h2>
+
+        <div class="faq-item">
+          <button class="faq-q">Are store purchases pay-to-win?<span class="faq-arrow"></span></button>
+          <div class="faq-a"><div class="faq-a-inner">No. Monkey Playzone does not sell gameplay advantages. All purchases are cosmetic (skins, tags, character customizations) or quality-of-life perks (priority queue, extra save slots). No purchasable weapons, stats boosts, or invulnerability.</div></div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-q">What payment methods do you accept?<span class="faq-arrow"></span></button>
+          <div class="faq-a"><div class="faq-a-inner">All major credit/debit cards, PayPal, and select crypto via our Tebex storefront. All transactions are processed securely — we do not store payment information.</div></div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-q">I purchased a package but didn't receive my perks. What now?<span class="faq-arrow"></span></button>
+          <div class="faq-a"><div class="faq-a-inner">Perks are typically applied within 30 minutes. If they haven't appeared after 2 hours: open a #store-support ticket in Discord with your transaction ID and Discord username. We'll resolve it within 24 hours.</div></div>
+        </div>
+
+        <!-- STILL NEED HELP CTA -->
+        <div style="margin-top:60px; background:var(--bg-maroon); border:var(--border-gold); padding:36px; text-align:center; clip-path:polygon(0 0, calc(100% - 16px) 0, 100% 16px, 100% 100%, 16px 100%, 0 calc(100% - 16px));">
+          <h3 style="font-family:var(--font-heading); font-size:1.5rem; letter-spacing:0.08em; text-transform:uppercase; color:var(--cream); margin-bottom:12px;">Still need help?</h3>
+          <p style="font-family:var(--font-detail); color:var(--cream-muted); margin-bottom:24px;">Open a support ticket in Discord. Our team responds within a few hours.</p>
+          <a href="https://discord.gg/monkeyplayzone" target="_blank" class="btn btn-primary btn-lg">💬 Open a Ticket</a>
+        </div>
+
+      </div>
+    </div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-top">
+      <div class="container">
+        <div class="footer-grid">
+          <div class="footer-brand">
+            <img src="assets/logo.png" alt="Monkey Playzone" class="footer-logo" />
+            <p class="footer-tagline">Welcome to the Jungle.</p>
+            <p class="footer-desc">The most ruthless hardcore FiveM PvP server.</p>
+            <div class="footer-socials">
+              <a href="#" class="social-icon">𝕏</a>
+              <a href="#" class="social-icon">💬</a>
+              <a href="#" class="social-icon">▶</a>
+              <a href="#" class="social-icon">♪</a>
+            </div>
+          </div>
+          <div class="footer-col">
+            <h4 class="footer-col-title">Navigation</h4>
+            <ul class="footer-links">
+              <li><a href="index.html">Home</a></li>
+              <li><a href="rules.html">Rules</a></li>
+        <li><a href="arena.html">Arena</a></li>
+            </ul>
+          </div>
+          <div class="footer-col">
+            <h4 class="footer-col-title">Community</h4>
+            <ul class="footer-links">
+              <li><a href="gallery.html">Gallery</a></li>
+              <li><a href="team.html">Team</a></li>
+              <li><a href="faq.html">FAQ</a></li>
+            </ul>
+          </div>
+          <div class="footer-col">
+            <h4 class="footer-col-title">Connect</h4>
+            <p class="footer-ip">cfx.re/join/xllrkdx</p>
+            <a href="cfx://connect/monkeyplayzone" class="btn btn-primary btn-sm">⚡ Join Server</a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div class="container">
+        <p>© 2024 Monkey Playzone. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <div class="sticky-connect" id="stickyConnect">
+    <a href="cfx://connect/monkeyplayzone" class="btn btn-primary btn-block">⚡ Connect to Server</a>
+  </div>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
