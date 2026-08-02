@@ -2,8 +2,7 @@
    MONKEY PLAYZONE — GLOBAL DESIGN SYSTEM
    ============================================================ */
 
-/* --- FONT IMPORTS --- */
-@import url('https://fonts.googleapis.com/css2?family=Anton&family=Bebas+Neue&family=Rajdhani:wght@400;500;600;700&family=Barlow:ital,wght@0,300;0,400;0,500;0,600;1,400&display=swap');
+/* NOTE: Google Fonts are loaded via <link> tags in each HTML file. No @import needed here. */
 
 /* --- CSS CUSTOM PROPERTIES --- */
 :root {
@@ -104,7 +103,9 @@ button {
   opacity: 0.03;
   background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
   background-size: 200px 200px;
-  animation: noiseShift 0.15s infinite;
+  /* GPU-composited: only animates transform, no paint/layout cost */
+  will-change: transform;
+  animation: noiseShift 0.15s steps(4) infinite;
 }
 
 @keyframes noiseShift {
@@ -1083,6 +1084,118 @@ button {
 }
 
 /* ============================================================
+   TOP-NAV (Uniform header used across inner pages)
+   ============================================================ */
+.top-nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 18px 40px;
+  background: linear-gradient(180deg, rgba(10,5,5,0.95) 0%, rgba(10,5,5,0.7) 100%);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-bottom: 1px solid rgba(212,161,76,0.25);
+  transition: all 0.3s ease;
+}
+
+.top-nav-logo {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  text-decoration: none;
+}
+
+.top-nav-logo img {
+  width: 44px;
+  height: 44px;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 1px solid var(--gold);
+}
+
+.top-nav-logo span {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 1.4rem;
+  letter-spacing: 0.12em;
+  color: var(--cream);
+}
+
+.top-nav-links {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.top-nav-links .nav-link {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 1.15rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: rgba(242,230,217,0.8);
+  text-decoration: none;
+  padding: 6px 14px;
+  transition: all 0.25s ease;
+  position: relative;
+}
+
+.top-nav-links .nav-link::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 50%; right: 50%;
+  height: 1px;
+  background: var(--gold);
+  transition: left 0.25s ease, right 0.25s ease;
+}
+
+.top-nav-links .nav-link:hover,
+.top-nav-links .nav-link.active {
+  color: var(--gold);
+  text-shadow: 0 0 12px rgba(212,161,76,0.5);
+}
+
+.top-nav-links .nav-link:hover::after,
+.top-nav-links .nav-link.active::after {
+  left: 14px;
+  right: 14px;
+}
+
+.nav-sep {
+  width: 1px;
+  height: 14px;
+  background: rgba(212,161,76,0.3);
+  flex-shrink: 0;
+}
+
+.top-nav-hamburger {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  padding: 4px;
+  width: 34px;
+  cursor: pointer;
+  background: none;
+  border: none;
+}
+
+.top-nav-hamburger span {
+  display: block;
+  height: 2px;
+  background: var(--cream);
+  border-radius: 2px;
+  transition: all 0.25s ease;
+}
+
+.top-nav-hamburger.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+.top-nav-hamburger.open span:nth-child(2) { opacity: 0; transform: scaleX(0); }
+.top-nav-hamburger.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+
+/* ============================================================
    RESPONSIVE
    ============================================================ */
 @media (max-width: 1100px) {
@@ -1102,6 +1215,15 @@ button {
   .hamburger { display: flex; }
   .btn-connect { display: none; }
   .sticky-connect { display: block; }
+
+  /* Top-nav inner pages responsive */
+  .top-nav {
+    padding: 14px 18px;
+  }
+
+  .top-nav-logo span { display: none; }
+  .top-nav-links { display: none; }
+  .top-nav-hamburger { display: flex; }
 
   .lb-header,
   .lb-row {

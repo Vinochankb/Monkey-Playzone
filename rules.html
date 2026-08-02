@@ -5,8 +5,27 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Server Rules — Monkey Playzone | FiveM PvP Server</title>
   <meta name="description" content="Read the official Monkey Playzone server rules before joining. Know the code — break it and face the consequences." />
+
+  <!-- Favicon -->
   <link rel="icon" href="assets/favicon.png" type="image/png" />
+
+  <!-- Open Graph / Social -->
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://monkeyplayzone.com/rules.html" />
+  <meta property="og:title" content="Server Rules — Monkey Playzone | FiveM PvP Server" />
+  <meta property="og:description" content="Read the official Monkey Playzone server rules before joining. Know the code — break it and face the consequences." />
+  <meta property="og:image" content="https://monkeyplayzone.com/assets/logo-192.png" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="theme-color" content="#1A0D0D" />
+
+  <!-- Canonical -->
+  <link rel="canonical" href="https://monkeyplayzone.com/rules.html" />
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Anton&family=Bebas+Neue&family=Rajdhani:wght@400;500;600;700&family=Barlow:wght@300;400;500;600&display=swap" rel="stylesheet" />
+
   <link rel="stylesheet" href="css/style.css" />
   <link rel="stylesheet" href="css/pages.css" />
 </head>
@@ -14,33 +33,37 @@
   <div class="noise-overlay"></div>
 
   <!-- UNIFORM TOP NAVIGATION HEADER -->
-  <header class="top-nav" id="navbar" style="position:fixed; top:0; left:0; width:100%; z-index:1000; display:flex; justify-content:space-between; align-items:center; padding:18px 40px; background:linear-gradient(180deg, rgba(10,5,5,0.95) 0%, rgba(10,5,5,0.7) 100%); backdrop-filter:blur(12px); border-bottom:1px solid rgba(212,161,76,0.25);">
-    <a href="index.html#hero" class="top-nav-logo" style="display:flex; align-items:center; gap:12px; text-decoration:none;">
-      <img src="assets/logo.png" alt="Monkey Playzone" style="width:44px; height:44px; object-fit:cover; border-radius:50%; border:1px solid var(--gold);" />
-      <span style="font-family:'Bebas Neue', sans-serif; font-size:1.4rem; letter-spacing:0.12em; color:var(--cream);">MONKEY PLAYZONE</span>
+  <header class="top-nav" id="navbar">
+    <a href="index.html" class="top-nav-logo">
+      <img src="assets/logo.jpg" alt="Monkey Playzone" />
+      <span>MONKEY PLAYZONE</span>
     </a>
-    <nav class="top-nav-links" style="display:flex; align-items:center; gap:8px;">
-      <a href="index.html" class="nav-link" style="font-family:'Bebas Neue', sans-serif; font-size:1.15rem; letter-spacing:0.16em; text-transform:uppercase; color:rgba(242,230,217,0.8); text-decoration:none; padding:6px 14px;">Home</a>
-      <div style="width:1px; height:14px; background:rgba(212,161,76,0.3);"></div>
-      <a href="rules.html" class="nav-link active" style="font-family:'Bebas Neue', sans-serif; font-size:1.15rem; letter-spacing:0.16em; text-transform:uppercase; color:#D4A14C; text-decoration:none; padding:6px 14px;">Rules</a>
-      <div style="width:1px; height:14px; background:rgba(212,161,76,0.3);"></div>
-      <a href="arena.html" class="nav-link" style="font-family:'Bebas Neue', sans-serif; font-size:1.15rem; letter-spacing:0.16em; text-transform:uppercase; color:rgba(242,230,217,0.8); text-decoration:none; padding:6px 14px;">Arena</a>
-      <div style="width:1px; height:14px; background:rgba(212,161,76,0.3);"></div>
-      <a href="team.html" class="nav-link" style="font-family:'Bebas Neue', sans-serif; font-size:1.15rem; letter-spacing:0.16em; text-transform:uppercase; color:rgba(242,230,217,0.8); text-decoration:none; padding:6px 14px;">Team</a>
-      <div style="width:1px; height:14px; background:rgba(212,161,76,0.3);"></div>
-      <a href="index.html#gallery" class="nav-link" style="font-family:'Bebas Neue', sans-serif; font-size:1.15rem; letter-spacing:0.16em; text-transform:uppercase; color:rgba(242,230,217,0.8); text-decoration:none; padding:6px 14px;">Gallery</a>
-      <div style="width:1px; height:14px; background:rgba(212,161,76,0.3);"></div>
-      <a href="index.html#faq" class="nav-link" style="font-family:'Bebas Neue', sans-serif; font-size:1.15rem; letter-spacing:0.16em; text-transform:uppercase; color:rgba(242,230,217,0.8); text-decoration:none; padding:6px 14px;">FAQ</a>
+    <nav class="top-nav-links">
+      <a href="index.html" class="nav-link">Home</a>
+      <div class="nav-sep"></div>
+      <a href="rules.html" class="nav-link active">Rules</a>
+      <div class="nav-sep"></div>
+      <a href="arena.html" class="nav-link">Arena</a>
+      <div class="nav-sep"></div>
+      <a href="team.html" class="nav-link">Team</a>
+      <div class="nav-sep"></div>
+      <a href="gallery.html" class="nav-link">Gallery</a>
+      <div class="nav-sep"></div>
+      <a href="faq.html" class="nav-link">FAQ</a>
     </nav>
+    <button class="top-nav-hamburger" id="topNavHamburger" aria-label="Open navigation menu">
+      <span></span><span></span><span></span>
+    </button>
     <a href="cfx://connect/monkeyplayzone" class="btn btn-primary btn-sm" style="clip-path: polygon(6px 0, 100% 0, calc(100% - 6px) 100%, 0 100%);">
       ⚡ CONNECT
     </a>
   </header>
 
+  <!-- MOBILE MENU -->
   <div class="mobile-menu-overlay" id="mobileMenuOverlay">
     <div class="mobile-menu-inner">
-      <button class="mobile-menu-close" id="mobileMenuClose">✕</button>
-      <img src="assets/logo.png" alt="Logo" class="mobile-logo" />
+      <button class="mobile-menu-close" id="mobileMenuClose" aria-label="Close navigation menu">✕</button>
+      <img src="assets/logo.jpg" alt="Logo" class="mobile-logo" />
       <ul class="mobile-nav-links">
         <li><a href="index.html">Home</a></li>
         <li><a href="rules.html">Rules</a></li>
@@ -199,7 +222,6 @@
         </div>
       </div>
 
-
     </div>
   </main>
 
@@ -208,14 +230,14 @@
       <div class="container">
         <div class="footer-grid">
           <div class="footer-brand">
-            <img src="assets/logo.png" alt="Monkey Playzone" class="footer-logo" />
+            <img src="assets/logo.jpg" alt="Monkey Playzone" class="footer-logo" loading="lazy" />
             <p class="footer-tagline">Welcome to the Jungle.</p>
             <p class="footer-desc">The most ruthless hardcore FiveM PvP server. Built by veterans, for warriors.</p>
             <div class="footer-socials">
-              <a href="#" class="social-icon" title="Twitter">𝕏</a>
-              <a href="#" class="social-icon" title="Discord">💬</a>
-              <a href="#" class="social-icon" title="YouTube">▶</a>
-              <a href="#" class="social-icon" title="TikTok">♪</a>
+              <a href="#" class="social-icon" title="Twitter" aria-label="Twitter">𝕏</a>
+              <a href="https://discord.gg/monkeyplayzone" target="_blank" rel="noopener noreferrer" class="social-icon" title="Discord" aria-label="Discord">💬</a>
+              <a href="#" class="social-icon" title="YouTube" aria-label="YouTube">▶</a>
+              <a href="#" class="social-icon" title="TikTok" aria-label="TikTok">♪</a>
             </div>
           </div>
           <div class="footer-col">
@@ -223,7 +245,7 @@
             <ul class="footer-links">
               <li><a href="index.html">Home</a></li>
               <li><a href="rules.html">Rules</a></li>
-        <li><a href="arena.html">Arena</a></li>
+              <li><a href="arena.html">Arena</a></li>
             </ul>
           </div>
           <div class="footer-col">
@@ -244,7 +266,7 @@
     </div>
     <div class="footer-bottom">
       <div class="container">
-        <p>© 2024 Monkey Playzone. All rights reserved. Not affiliated with Rockstar Games or FiveM.</p>
+        <p>© <span class="footer-year">2025</span> Monkey Playzone. All rights reserved. Not affiliated with Rockstar Games or FiveM.</p>
       </div>
     </div>
   </footer>

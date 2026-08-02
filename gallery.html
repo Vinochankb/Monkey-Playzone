@@ -3,36 +3,67 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Gallery — Monkey Playzone | War Footage & Community Media</title>
+  <title>Gallery — Monkey Playzone | War Footage &amp; Community Media</title>
   <meta name="description" content="Raw war footage and community screenshots from Monkey Playzone. PvP combat, faction wars, and jungle raids." />
+
+  <!-- Favicon -->
   <link rel="icon" href="assets/favicon.png" type="image/png" />
+
+  <!-- Open Graph / Social -->
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://monkeyplayzone.com/gallery.html" />
+  <meta property="og:title" content="Gallery — Monkey Playzone | War Footage &amp; Community Media" />
+  <meta property="og:description" content="Raw war footage and community screenshots from Monkey Playzone. PvP combat, faction wars, and jungle raids." />
+  <meta property="og:image" content="https://monkeyplayzone.com/assets/logo-192.png" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="theme-color" content="#1A0D0D" />
+
+  <!-- Canonical -->
+  <link rel="canonical" href="https://monkeyplayzone.com/gallery.html" />
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Anton&family=Bebas+Neue&family=Rajdhani:wght@400;500;600;700&family=Barlow:wght@300;400;500;600&display=swap" rel="stylesheet" />
+
   <link rel="stylesheet" href="css/style.css" />
   <link rel="stylesheet" href="css/pages.css" />
 </head>
 <body>
   <div class="noise-overlay"></div>
 
-  <nav class="navbar scrolled" id="navbar">
-    <div class="nav-inner container">
-      <a href="index.html" class="nav-logo"><img src="assets/logo.png" alt="Monkey Playzone" class="logo-img" /></a>
-      <ul class="nav-links" id="navLinks">
-        <li><a href="index.html" class="nav-link">Home</a></li>
-        <li><a href="rules.html" class="nav-link">Rules</a></li>
-        <li><a href="arena.html" class="nav-link">Arena</a></li>
-        <li><a href="team.html" class="nav-link">Team</a></li>
-      </ul>
-      <div class="nav-actions">
-        <a href="cfx://connect/monkeyplayzone" class="btn btn-primary btn-connect">⚡ Connect to Server</a>
-        <button class="hamburger" id="hamburger"><span></span><span></span><span></span></button>
-      </div>
-    </div>
-  </nav>
+  <!-- UNIFORM TOP NAVIGATION HEADER -->
+  <header class="top-nav" id="navbar">
+    <a href="index.html" class="top-nav-logo">
+      <img src="assets/logo.jpg" alt="Monkey Playzone" />
+      <span>MONKEY PLAYZONE</span>
+    </a>
+    <nav class="top-nav-links">
+      <a href="index.html" class="nav-link">Home</a>
+      <div class="nav-sep"></div>
+      <a href="rules.html" class="nav-link">Rules</a>
+      <div class="nav-sep"></div>
+      <a href="arena.html" class="nav-link">Arena</a>
+      <div class="nav-sep"></div>
+      <a href="team.html" class="nav-link">Team</a>
+      <div class="nav-sep"></div>
+      <a href="gallery.html" class="nav-link active">Gallery</a>
+      <div class="nav-sep"></div>
+      <a href="faq.html" class="nav-link">FAQ</a>
+    </nav>
+    <button class="top-nav-hamburger" id="topNavHamburger" aria-label="Open navigation menu">
+      <span></span><span></span><span></span>
+    </button>
+    <a href="cfx://connect/monkeyplayzone" class="btn btn-primary btn-sm" style="clip-path: polygon(6px 0, 100% 0, calc(100% - 6px) 100%, 0 100%);">
+      ⚡ CONNECT
+    </a>
+  </header>
 
+  <!-- MOBILE MENU -->
   <div class="mobile-menu-overlay" id="mobileMenuOverlay">
     <div class="mobile-menu-inner">
-      <button class="mobile-menu-close" id="mobileMenuClose">✕</button>
-      <img src="assets/logo.png" alt="Logo" class="mobile-logo" />
+      <button class="mobile-menu-close" id="mobileMenuClose" aria-label="Close navigation menu">✕</button>
+      <img src="assets/logo.jpg" alt="Logo" class="mobile-logo" />
       <ul class="mobile-nav-links">
         <li><a href="index.html">Home</a></li>
         <li><a href="rules.html">Rules</a></li>
@@ -81,7 +112,7 @@
           </div>
         </div>
 
-        <div class="gallery-grid-item" style="grid-row: span 2;">
+        <div class="gallery-grid-item">
           <div class="gallery-grid-item-inner" style="background: linear-gradient(160deg, #1E0007 0%, #7A0F1E 40%, #C72C2C 80%, #1A0D0D 100%); width:100%; height:100%;">
             <div style="display:flex; align-items:flex-end; justify-content:flex-start; height:100%; padding:16px; background: linear-gradient(0deg, rgba(26,13,13,0.8) 0%, transparent 50%);">
               <div style="font-family:var(--font-detail); font-size:0.72rem; font-weight:600; letter-spacing:0.15em; text-transform:uppercase; color:rgba(255,255,255,0.7);">Faction War · Downtown</div>
@@ -164,7 +195,7 @@
       <div style="margin-top:50px; background: var(--bg-maroon); border:var(--border-gold); padding:36px; text-align:center; clip-path: polygon(0 0, calc(100% - 16px) 0, 100% 16px, 100% 100%, 16px 100%, 0 calc(100% - 16px));">
         <h3 style="font-family:var(--font-display); font-size:1.8rem; letter-spacing:0.08em; text-transform:uppercase; color:var(--cream); margin-bottom:12px;">Submit Your <span class="text-gold">Footage</span></h3>
         <p style="font-family:var(--font-detail); color:var(--cream-muted); margin-bottom:24px;">Got a sick clip or screenshot? Post it in #media-drops on Discord and it may end up here.</p>
-        <a href="https://discord.gg/monkeyplayzone" target="_blank" class="btn btn-primary btn-lg">💬 Post in Discord</a>
+        <a href="https://discord.gg/monkeyplayzone" target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-lg">💬 Post in Discord</a>
       </div>
 
     </div>
@@ -175,14 +206,14 @@
       <div class="container">
         <div class="footer-grid">
           <div class="footer-brand">
-            <img src="assets/logo.png" alt="Monkey Playzone" class="footer-logo" />
+            <img src="assets/logo.jpg" alt="Monkey Playzone" class="footer-logo" loading="lazy" />
             <p class="footer-tagline">Welcome to the Jungle.</p>
             <p class="footer-desc">The most ruthless hardcore FiveM PvP server.</p>
             <div class="footer-socials">
-              <a href="#" class="social-icon">𝕏</a>
-              <a href="#" class="social-icon">💬</a>
-              <a href="#" class="social-icon">▶</a>
-              <a href="#" class="social-icon">♪</a>
+              <a href="#" class="social-icon" title="Twitter" aria-label="Twitter">𝕏</a>
+              <a href="https://discord.gg/monkeyplayzone" target="_blank" rel="noopener noreferrer" class="social-icon" title="Discord" aria-label="Discord">💬</a>
+              <a href="#" class="social-icon" title="YouTube" aria-label="YouTube">▶</a>
+              <a href="#" class="social-icon" title="TikTok" aria-label="TikTok">♪</a>
             </div>
           </div>
           <div class="footer-col">
@@ -190,7 +221,7 @@
             <ul class="footer-links">
               <li><a href="index.html">Home</a></li>
               <li><a href="rules.html">Rules</a></li>
-        <li><a href="arena.html">Arena</a></li>
+              <li><a href="arena.html">Arena</a></li>
             </ul>
           </div>
           <div class="footer-col">
@@ -211,7 +242,7 @@
     </div>
     <div class="footer-bottom">
       <div class="container">
-        <p>© 2024 Monkey Playzone. All rights reserved.</p>
+        <p>© <span class="footer-year">2025</span> Monkey Playzone. All rights reserved.</p>
       </div>
     </div>
   </footer>
@@ -221,14 +252,5 @@
   </div>
 
   <script src="js/main.js"></script>
-  <script>
-    // Gallery filter buttons
-    document.querySelectorAll('.lb-filter-btn').forEach(btn => {
-      btn.addEventListener('click', () => {
-        document.querySelectorAll('.lb-filter-btn').forEach(b => b.classList.remove('active'));
-        btn.classList.add('active');
-      });
-    });
-  </script>
 </body>
 </html>

@@ -5,7 +5,13 @@
 (function() {
   'use strict';
 
-  // ── NAVBAR SCROLL ──────────────────────────────────────────
+  // ── AUTO COPYRIGHT YEAR ────────────────────────────────────
+  const currentYear = new Date().getFullYear();
+  document.querySelectorAll('.footer-year').forEach(el => {
+    el.textContent = currentYear;
+  });
+
+  // ── NAVBAR SCROLL (for .navbar style pages) ────────────────
   const navbar = document.getElementById('navbar');
   if (navbar) {
     window.addEventListener('scroll', () => {
@@ -13,10 +19,10 @@
     }, { passive: true });
   }
 
-  // ── HAMBURGER MENU ─────────────────────────────────────────
-  const hamburger      = document.getElementById('hamburger');
-  const mobileOverlay  = document.getElementById('mobileMenuOverlay');
-  const mobileClose    = document.getElementById('mobileMenuClose');
+  // ── HAMBURGER MENU (.navbar style — gallery, faq) ──────────
+  const hamburger     = document.getElementById('hamburger');
+  const mobileOverlay = document.getElementById('mobileMenuOverlay');
+  const mobileClose   = document.getElementById('mobileMenuClose');
 
   if (hamburger && mobileOverlay) {
     hamburger.addEventListener('click', () => {
@@ -26,18 +32,44 @@
     });
 
     if (mobileClose) {
-      mobileClose.addEventListener('click', closeMenu);
+      mobileClose.addEventListener('click', closeNavbarMenu);
     }
 
-    // Close on nav link click
     mobileOverlay.querySelectorAll('a').forEach(a => {
-      a.addEventListener('click', closeMenu);
+      a.addEventListener('click', closeNavbarMenu);
     });
   }
 
-  function closeMenu() {
+  function closeNavbarMenu() {
     hamburger && hamburger.classList.remove('open');
     mobileOverlay && mobileOverlay.classList.remove('open');
+    document.body.style.overflow = '';
+  }
+
+  // ── TOP-NAV HAMBURGER (.top-nav style — team, rules, arena, index) ──
+  const topNavHamburger = document.getElementById('topNavHamburger');
+  const topNavOverlay   = document.getElementById('mobileMenuOverlay');
+  const topNavClose     = document.getElementById('mobileMenuClose');
+
+  if (topNavHamburger && topNavOverlay) {
+    topNavHamburger.addEventListener('click', () => {
+      topNavHamburger.classList.toggle('open');
+      topNavOverlay.classList.toggle('open');
+      document.body.style.overflow = topNavOverlay.classList.contains('open') ? 'hidden' : '';
+    });
+
+    if (topNavClose) {
+      topNavClose.addEventListener('click', closeTopNav);
+    }
+
+    topNavOverlay.querySelectorAll('a').forEach(a => {
+      a.addEventListener('click', closeTopNav);
+    });
+  }
+
+  function closeTopNav() {
+    topNavHamburger && topNavHamburger.classList.remove('open');
+    topNavOverlay && topNavOverlay.classList.remove('open');
     document.body.style.overflow = '';
   }
 
@@ -45,7 +77,7 @@
   const copyIpEl = document.getElementById('copyIp');
   if (copyIpEl) {
     copyIpEl.addEventListener('click', () => {
-      navigator.clipboard.writeText('cfx.re/join/mpz1').then(() => {
+      navigator.clipboard.writeText('cfx.re/join/xllrkdx').then(() => {
         const orig = copyIpEl.textContent;
         copyIpEl.textContent = '✓ COPIED!';
         copyIpEl.style.color = '#2ECC71';
@@ -81,7 +113,7 @@
     const href = link.getAttribute('href');
     if (href === currentPath || (currentPath === '' && href === 'index.html')) {
       link.classList.add('active');
-    } else {
+    } else if (!href.startsWith('#')) {
       link.classList.remove('active');
     }
   });
@@ -97,6 +129,14 @@
 
       // Toggle current
       if (!isOpen) item.classList.add('open');
+    });
+  });
+
+  // ── GALLERY FILTER BUTTONS ──────────────────────────────────
+  document.querySelectorAll('.lb-filter-btn').forEach(btn => {
+    btn.addEventListener('click', () => {
+      document.querySelectorAll('.lb-filter-btn').forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
     });
   });
 
@@ -139,11 +179,30 @@
     cardObserver.observe(grid);
   });
 
+  // ── ACTIVE NAV HIGHLIGHT ON SCROLL (index.html only) ───────
+  if (currentPath === 'index.html' || currentPath === '') {
+    window.addEventListener('scroll', () => {
+      const sections = document.querySelectorAll('section[id]');
+      const scrollY = window.pageYOffset;
 
+      sections.forEach(current => {
+        const sectionHeight = current.offsetHeight;
+        const sectionTop = current.offsetTop - 120;
+        const sectionId = current.getAttribute('id');
+        const navLink = document.querySelector('.top-nav-links a[href*=' + sectionId + ']');
+
+        if (navLink) {
+          if (scrollY > sectionTop && scrollY <= sectionTop + sectionHeight) {
+            navLink.classList.add('active');
+          } else {
+            navLink.classList.remove('active');
+          }
+        }
+      });
+    }, { passive: true });
+  }
 
 })();
-
-// ============================================================
 
 // ============================================================
 // FIVEM SERVER STATUS FETCHER
@@ -151,14 +210,14 @@
 (function() {
   const JOIN_CODE = 'xllrkdx';
   const API_URL = `https://servers-frontend.fivem.net/api/servers/single/${JOIN_CODE}`;
-  
+
   const playerCountEl = document.getElementById('playerCount');
-  const serverPingEl = document.getElementById('serverPing');
-  const statusEl = document.querySelector('.status-value.online');
+  const serverPingEl  = document.getElementById('serverPing');
+  const statusEl      = document.querySelector('.status-value.online');
 
   async function fetchServerStatus() {
     if (!playerCountEl || !serverPingEl || !statusEl) return;
-    
+
     try {
       const start = Date.now();
       const response = await fetch(API_URL);
@@ -166,12 +225,12 @@
 
       if (response.ok) {
         const data = await response.json();
-        const players = data.Data.clients;
+        const players    = data.Data.clients;
         const maxPlayers = data.Data.sv_maxclients;
-        
+
         playerCountEl.textContent = `${players} / ${maxPlayers}`;
-        serverPingEl.textContent = `${ping}ms`;
-        
+        serverPingEl.textContent  = `${ping}ms`;
+
         statusEl.innerHTML = '<span class="pulse-dot sm"></span>ONLINE';
         statusEl.style.color = '#2ecc71';
       } else {
@@ -179,8 +238,8 @@
       }
     } catch (error) {
       playerCountEl.textContent = `0 / 0`;
-      serverPingEl.textContent = `---`;
-      
+      serverPingEl.textContent  = `---`;
+
       statusEl.innerHTML = '<span class="pulse-dot sm" style="background:#e74c3c; box-shadow:0 0 8px #e74c3c;"></span>OFFLINE';
       statusEl.style.color = '#e74c3c';
     }

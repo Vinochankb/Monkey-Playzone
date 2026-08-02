@@ -3,10 +3,29 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Arenas & Events — Monkey Playzone | FiveM PvP Server</title>
+  <title>Arenas &amp; Events — Monkey Playzone | FiveM PvP Server</title>
   <meta name="description" content="Explore the diverse arenas and events of Monkey Playzone. Dominate the PvP Arena, race to the finish line in the Racing Arena, and participate in special server events." />
+
+  <!-- Favicon -->
   <link rel="icon" href="assets/favicon.png" type="image/png" />
+
+  <!-- Open Graph / Social -->
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://monkeyplayzone.com/arena.html" />
+  <meta property="og:title" content="Arenas &amp; Events — Monkey Playzone | FiveM PvP Server" />
+  <meta property="og:description" content="Explore the diverse arenas and events of Monkey Playzone. Dominate the PvP Arena, race to the finish line in the Racing Arena, and participate in special server events." />
+  <meta property="og:image" content="https://monkeyplayzone.com/assets/logo-192.png" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="theme-color" content="#1A0D0D" />
+
+  <!-- Canonical -->
+  <link rel="canonical" href="https://monkeyplayzone.com/arena.html" />
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Anton&family=Bebas+Neue&family=Rajdhani:wght@400;500;600;700&family=Barlow:wght@300;400;500;600&display=swap" rel="stylesheet" />
+
   <link rel="stylesheet" href="css/style.css" />
   <link rel="stylesheet" href="css/pages.css" />
   <style>
@@ -36,8 +55,7 @@
     .rules-full-item:hover::after {
       opacity: 1;
     }
-    
-    
+
     /* Tiles View Styles */
     .category-tiles {
       display: grid;
@@ -79,7 +97,7 @@
     }
     #eventsView {
       display: none;
-      animation: fadeIn 0.4s ease;
+      animation: fadeInUp 0.4s ease;
     }
     .back-btn {
       display: inline-flex;
@@ -101,23 +119,20 @@
       background: rgba(212, 161, 76, 0.1);
       border-color: var(--gold);
     }
-    @keyframes fadeIn {
-      from { opacity: 0; transform: translateY(10px); }
-      to { opacity: 1; transform: translateY(0); }
-    }
 
     /* Premium Modal Styles */
     .arena-modal {
-      display: none; 
-      position: fixed; 
-      z-index: 2000; 
+      display: none;
+      position: fixed;
+      z-index: 2000;
       left: 0;
       top: 0;
-      width: 100%; 
-      height: 100%; 
-      overflow: hidden; 
-      background-color: rgba(10, 5, 5, 0.85); 
+      width: 100%;
+      height: 100%;
+      overflow: hidden;
+      background-color: rgba(10, 5, 5, 0.85);
       backdrop-filter: blur(8px);
+      -webkit-backdrop-filter: blur(8px);
       opacity: 0;
       transition: opacity 0.3s ease;
     }
@@ -154,11 +169,12 @@
       font-weight: bold;
       cursor: pointer;
       transition: color 0.2s ease;
+      background: none;
+      border: none;
     }
     .arena-modal-close:hover,
     .arena-modal-close:focus {
       color: var(--red-bright);
-      text-decoration: none;
     }
     .modal-title {
       font-family: 'Bebas Neue', sans-serif;
@@ -202,33 +218,37 @@
   <div class="noise-overlay"></div>
 
   <!-- UNIFORM TOP NAVIGATION HEADER -->
-  <header class="top-nav" id="navbar" style="position:fixed; top:0; left:0; width:100%; z-index:1000; display:flex; justify-content:space-between; align-items:center; padding:18px 40px; background:linear-gradient(180deg, rgba(10,5,5,0.95) 0%, rgba(10,5,5,0.7) 100%); backdrop-filter:blur(12px); border-bottom:1px solid rgba(212,161,76,0.25);">
-    <a href="index.html#hero" class="top-nav-logo" style="display:flex; align-items:center; gap:12px; text-decoration:none;">
-      <img src="assets/logo.png" alt="Monkey Playzone" style="width:44px; height:44px; object-fit:cover; border-radius:50%; border:1px solid var(--gold);" />
-      <span style="font-family:'Bebas Neue', sans-serif; font-size:1.4rem; letter-spacing:0.12em; color:var(--cream);">MONKEY PLAYZONE</span>
+  <header class="top-nav" id="navbar">
+    <a href="index.html" class="top-nav-logo">
+      <img src="assets/logo.jpg" alt="Monkey Playzone" />
+      <span>MONKEY PLAYZONE</span>
     </a>
-    <nav class="top-nav-links" style="display:flex; align-items:center; gap:8px;">
-      <a href="index.html" class="nav-link" style="font-family:'Bebas Neue', sans-serif; font-size:1.15rem; letter-spacing:0.16em; text-transform:uppercase; color:rgba(242,230,217,0.8); text-decoration:none; padding:6px 14px;">Home</a>
-      <div style="width:1px; height:14px; background:rgba(212,161,76,0.3);"></div>
-      <a href="rules.html" class="nav-link" style="font-family:'Bebas Neue', sans-serif; font-size:1.15rem; letter-spacing:0.16em; text-transform:uppercase; color:rgba(242,230,217,0.8); text-decoration:none; padding:6px 14px;">Rules</a>
-      <div style="width:1px; height:14px; background:rgba(212,161,76,0.3);"></div>
-      <a href="arena.html" class="nav-link active" style="font-family:'Bebas Neue', sans-serif; font-size:1.15rem; letter-spacing:0.16em; text-transform:uppercase; color:#D4A14C; text-decoration:none; padding:6px 14px;">Arena</a>
-      <div style="width:1px; height:14px; background:rgba(212,161,76,0.3);"></div>
-      <a href="team.html" class="nav-link" style="font-family:'Bebas Neue', sans-serif; font-size:1.15rem; letter-spacing:0.16em; text-transform:uppercase; color:rgba(242,230,217,0.8); text-decoration:none; padding:6px 14px;">Team</a>
-      <div style="width:1px; height:14px; background:rgba(212,161,76,0.3);"></div>
-      <a href="index.html#gallery" class="nav-link" style="font-family:'Bebas Neue', sans-serif; font-size:1.15rem; letter-spacing:0.16em; text-transform:uppercase; color:rgba(242,230,217,0.8); text-decoration:none; padding:6px 14px;">Gallery</a>
-      <div style="width:1px; height:14px; background:rgba(212,161,76,0.3);"></div>
-      <a href="index.html#faq" class="nav-link" style="font-family:'Bebas Neue', sans-serif; font-size:1.15rem; letter-spacing:0.16em; text-transform:uppercase; color:rgba(242,230,217,0.8); text-decoration:none; padding:6px 14px;">FAQ</a>
+    <nav class="top-nav-links">
+      <a href="index.html" class="nav-link">Home</a>
+      <div class="nav-sep"></div>
+      <a href="rules.html" class="nav-link">Rules</a>
+      <div class="nav-sep"></div>
+      <a href="arena.html" class="nav-link active">Arena</a>
+      <div class="nav-sep"></div>
+      <a href="team.html" class="nav-link">Team</a>
+      <div class="nav-sep"></div>
+      <a href="gallery.html" class="nav-link">Gallery</a>
+      <div class="nav-sep"></div>
+      <a href="faq.html" class="nav-link">FAQ</a>
     </nav>
+    <button class="top-nav-hamburger" id="topNavHamburger" aria-label="Open navigation menu">
+      <span></span><span></span><span></span>
+    </button>
     <a href="cfx://connect/monkeyplayzone" class="btn btn-primary btn-sm" style="clip-path: polygon(6px 0, 100% 0, calc(100% - 6px) 100%, 0 100%);">
       ⚡ CONNECT
     </a>
   </header>
 
+  <!-- MOBILE MENU -->
   <div class="mobile-menu-overlay" id="mobileMenuOverlay">
     <div class="mobile-menu-inner">
-      <button class="mobile-menu-close" id="mobileMenuClose">✕</button>
-      <img src="assets/logo.png" alt="Logo" class="mobile-logo" />
+      <button class="mobile-menu-close" id="mobileMenuClose" aria-label="Close navigation menu">✕</button>
+      <img src="assets/logo.jpg" alt="Logo" class="mobile-logo" />
       <ul class="mobile-nav-links">
         <li><a href="index.html">Home</a></li>
         <li><a href="rules.html">Rules</a></li>
@@ -254,7 +274,6 @@
   <main class="rules-main" style="padding-bottom: 60px;">
     <div class="container">
 
-      
       <div id="categoriesView" class="category-tiles">
         <div class="category-tile" data-target="pvp-section">
           <div class="tile-icon">⚔️</div>
@@ -272,73 +291,74 @@
           <p>Server-wide chaos</p>
         </div>
       </div>
-      
+
       <div id="eventsView">
         <button class="back-btn" id="backToCategories">← Back to Categories</button>
 
-      <!-- PVP ARENA -->
-      <div class="rules-section" id="pvp-section">
-        <h2 class="rules-section-title">PvP Arena</h2>
-        <div class="rules-full-list">
-          <div class="rules-full-item" data-title="The Bloodbath Zone" data-details="A multi-level complex designed for intense close-quarters combat. Expect fast-paced engagements, tight corners, and vertical advantages." data-rules="No safe zones exist within the complex.|Max 4 players per squad.|Full loot drops on death.|Explosives are permitted but highly dangerous in enclosed spaces.">
-            <span class="rules-full-num">⚔️</span>
-            <div class="rules-full-content">
-              <h4>The Bloodbath Zone</h4>
-              <p>Step into the ultimate test of combat skills. The PvP Arena features close-quarters combat, vertical advantages, and zero safe zones. Bring your best loadout or scavenge from fallen foes.</p>
+        <!-- PVP ARENA -->
+        <div class="rules-section" id="pvp-section">
+          <h2 class="rules-section-title">PvP Arena</h2>
+          <div class="rules-full-list">
+            <div class="rules-full-item" data-title="The Bloodbath Zone" data-details="A multi-level complex designed for intense close-quarters combat. Expect fast-paced engagements, tight corners, and vertical advantages." data-rules="No safe zones exist within the complex.|Max 4 players per squad.|Full loot drops on death.|Explosives are permitted but highly dangerous in enclosed spaces.">
+              <span class="rules-full-num">⚔️</span>
+              <div class="rules-full-content">
+                <h4>The Bloodbath Zone</h4>
+                <p>Step into the ultimate test of combat skills. The PvP Arena features close-quarters combat, vertical advantages, and zero safe zones. Bring your best loadout or scavenge from fallen foes.</p>
+              </div>
             </div>
-          </div>
-          <div class="rules-full-item" data-title="Sniper's Nest" data-details="High-altitude engagement map with long sightlines spanning across multiple skyscrapers. Patience and precision are your best weapons." data-rules="Sniper rifles and designated marksman rifles ONLY.|No explosives or fully automatic weapons.|No aerial vehicles allowed in the airspace.|Ground-level engagements are disabled.">
-            <span class="rules-full-num">🎯</span>
-            <div class="rules-full-content">
-              <h4>Sniper's Nest</h4>
-              <p>A dedicated long-range engagement map. Elevated positions, narrow sightlines, and constant movement are required to survive here.</p>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <!-- RACING ARENA -->
-      <div class="rules-section" id="racing-section">
-        <h2 class="rules-section-title">Racing Arena</h2>
-        <div class="rules-full-list">
-          <div class="rules-full-item" data-title="Neon Circuit" data-details="Underground street racing circuit winding through the neon-lit downtown core. Sharp turns, long straights, and massive jumps await." data-rules="No weapons allowed during the race.|No pit stops or repairs during active heats.|Interfering with racers as a spectator results in a 24h ban.|Custom sports and super cars only.">
-            <span class="rules-full-num">🏎️</span>
-            <div class="rules-full-content">
-              <h4>Neon Circuit</h4>
-              <p>High-speed underground street racing. Custom tracks through the city streets with sharp turns and long straights. Bring your fastest custom vehicle.</p>
-            </div>
-          </div>
-          <div class="rules-full-item" data-title="Desert Rally" data-details="Treacherous dunes and dirt tracks set in the unforgiving badlands. Vehicle handling, off-road capability, and durability are put to the ultimate test." data-rules="Off-road vehicle classes only.|Checkpoints must be cleared in sequential order.|Cutting corners through non-track terrain is permitted if you survive.|Ramming is allowed but at your own vehicle's risk.">
-            <span class="rules-full-num">🏜️</span>
-            <div class="rules-full-content">
-              <h4>Desert Rally</h4>
-              <p>Off-road mayhem. Navigate through treacherous dunes, dirt tracks, and unexpected obstacles. Vehicle handling and durability are put to the ultimate test.</p>
+            <div class="rules-full-item" data-title="Sniper's Nest" data-details="High-altitude engagement map with long sightlines spanning across multiple skyscrapers. Patience and precision are your best weapons." data-rules="Sniper rifles and designated marksman rifles ONLY.|No explosives or fully automatic weapons.|No aerial vehicles allowed in the airspace.|Ground-level engagements are disabled.">
+              <span class="rules-full-num">🎯</span>
+              <div class="rules-full-content">
+                <h4>Sniper's Nest</h4>
+                <p>A dedicated long-range engagement map. Elevated positions, narrow sightlines, and constant movement are required to survive here.</p>
+              </div>
             </div>
           </div>
         </div>
-      </div>
 
-      <!-- EVENTS -->
-      <div class="rules-section" id="events-section">
-        <h2 class="rules-section-title">Special Events</h2>
-        <div class="rules-full-list">
-          <div class="rules-full-item" data-title="Weekly Purge" data-details="Survive the weekend madness with enhanced loot drops, global chaotic events, and a server-wide free-for-all. Form alliances or go rogue." data-rules="All standard RDM and safe-zone rules are lifted.|Full loot drops active across the entire map.|Admins will not intervene in combat scenarios.|Ends automatically at server restart on Monday 00:00 EST.">
-            <span class="rules-full-num">🔥</span>
-            <div class="rules-full-content">
-              <h4>Weekly Purge</h4>
-              <p>Every weekend, all rules are lifted across the city. No safe zones, enhanced loot drops, and maximum chaos. Form alliances or go rogue.</p>
+        <!-- RACING ARENA -->
+        <div class="rules-section" id="racing-section">
+          <h2 class="rules-section-title">Racing Arena</h2>
+          <div class="rules-full-list">
+            <div class="rules-full-item" data-title="Neon Circuit" data-details="Underground street racing circuit winding through the neon-lit downtown core. Sharp turns, long straights, and massive jumps await." data-rules="No weapons allowed during the race.|No pit stops or repairs during active heats.|Interfering with racers as a spectator results in a 24h ban.|Custom sports and super cars only.">
+              <span class="rules-full-num">🏎️</span>
+              <div class="rules-full-content">
+                <h4>Neon Circuit</h4>
+                <p>High-speed underground street racing. Custom tracks through the city streets with sharp turns and long straights. Bring your fastest custom vehicle.</p>
+              </div>
             </div>
-          </div>
-          <div class="rules-full-item" data-title="King of the Hill" data-details="Capture and hold designated control points across the map to earn massive rewards, exclusive faction tags, and server-wide recognition." data-rules="Strict faction limits apply (Max 10 per group).|No third-partying outside the active control zone.|Holding the zone for 30 consecutive minutes grants victory.|Combat logging during a KotH event results in a 48h ban.">
-            <span class="rules-full-num">👑</span>
-            <div class="rules-full-content">
-              <h4>King of the Hill</h4>
-              <p>Factions compete to hold control points across the map. Hold the zone to earn massive rewards, exclusive tags, and server-wide recognition.</p>
+            <div class="rules-full-item" data-title="Desert Rally" data-details="Treacherous dunes and dirt tracks set in the unforgiving badlands. Vehicle handling, off-road capability, and durability are put to the ultimate test." data-rules="Off-road vehicle classes only.|Checkpoints must be cleared in sequential order.|Cutting corners through non-track terrain is permitted if you survive.|Ramming is allowed but at your own vehicle's risk.">
+              <span class="rules-full-num">🏜️</span>
+              <div class="rules-full-content">
+                <h4>Desert Rally</h4>
+                <p>Off-road mayhem. Navigate through treacherous dunes, dirt tracks, and unexpected obstacles. Vehicle handling and durability are put to the ultimate test.</p>
+              </div>
             </div>
           </div>
         </div>
-      </div>
 
+        <!-- EVENTS -->
+        <div class="rules-section" id="events-section">
+          <h2 class="rules-section-title">Special Events</h2>
+          <div class="rules-full-list">
+            <div class="rules-full-item" data-title="Weekly Purge" data-details="Survive the weekend madness with enhanced loot drops, global chaotic events, and a server-wide free-for-all. Form alliances or go rogue." data-rules="All standard RDM and safe-zone rules are lifted.|Full loot drops active across the entire map.|Admins will not intervene in combat scenarios.|Ends automatically at server restart on Monday 00:00 EST.">
+              <span class="rules-full-num">🔥</span>
+              <div class="rules-full-content">
+                <h4>Weekly Purge</h4>
+                <p>Every weekend, all rules are lifted across the city. No safe zones, enhanced loot drops, and maximum chaos. Form alliances or go rogue.</p>
+              </div>
+            </div>
+            <div class="rules-full-item" data-title="King of the Hill" data-details="Capture and hold designated control points across the map to earn massive rewards, exclusive faction tags, and server-wide recognition." data-rules="Strict faction limits apply (Max 10 per group).|No third-partying outside the active control zone.|Holding the zone for 30 consecutive minutes grants victory.|Combat logging during a KotH event results in a 48h ban.">
+              <span class="rules-full-num">👑</span>
+              <div class="rules-full-content">
+                <h4>King of the Hill</h4>
+                <p>Factions compete to hold control points across the map. Hold the zone to earn massive rewards, exclusive tags, and server-wide recognition.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div><!-- end #eventsView -->
 
     </div>
   </main>
@@ -348,14 +368,14 @@
       <div class="container">
         <div class="footer-grid">
           <div class="footer-brand">
-            <img src="assets/logo.png" alt="Monkey Playzone" class="footer-logo" />
+            <img src="assets/logo.jpg" alt="Monkey Playzone" class="footer-logo" loading="lazy" />
             <p class="footer-tagline">Welcome to the Jungle.</p>
             <p class="footer-desc">The most ruthless hardcore FiveM PvP server. Built by veterans, for warriors.</p>
             <div class="footer-socials">
-              <a href="#" class="social-icon" title="Twitter">𝕏</a>
-              <a href="#" class="social-icon" title="Discord">💬</a>
-              <a href="#" class="social-icon" title="YouTube">▶</a>
-              <a href="#" class="social-icon" title="TikTok">♪</a>
+              <a href="#" class="social-icon" title="Twitter" aria-label="Twitter">𝕏</a>
+              <a href="https://discord.gg/monkeyplayzone" target="_blank" rel="noopener noreferrer" class="social-icon" title="Discord" aria-label="Discord">💬</a>
+              <a href="#" class="social-icon" title="YouTube" aria-label="YouTube">▶</a>
+              <a href="#" class="social-icon" title="TikTok" aria-label="TikTok">♪</a>
             </div>
           </div>
           <div class="footer-col">
@@ -363,7 +383,7 @@
             <ul class="footer-links">
               <li><a href="index.html">Home</a></li>
               <li><a href="rules.html">Rules</a></li>
-        <li><a href="arena.html">Arena</a></li>
+              <li><a href="arena.html">Arena</a></li>
             </ul>
           </div>
           <div class="footer-col">
@@ -384,7 +404,7 @@
     </div>
     <div class="footer-bottom">
       <div class="container">
-        <p>© 2024 Monkey Playzone. All rights reserved. Not affiliated with Rockstar Games or FiveM.</p>
+        <p>© <span class="footer-year">2025</span> Monkey Playzone. All rights reserved. Not affiliated with Rockstar Games or FiveM.</p>
       </div>
     </div>
   </footer>
@@ -393,17 +413,15 @@
     <a href="cfx://connect/monkeyplayzone" class="btn btn-primary btn-block">⚡ Connect to Server</a>
   </div>
 
-  <script src="js/main.js"></script>
-
-  <!-- Arena Modal Element -->
-  <div id="arenaModal" class="arena-modal">
+  <!-- Arena Modal -->
+  <div id="arenaModal" class="arena-modal" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
     <div class="arena-modal-content">
-      <span class="arena-modal-close" id="closeModal">&times;</span>
+      <button class="arena-modal-close" id="closeModal" aria-label="Close modal">&times;</button>
       <h2 id="modalTitle" class="modal-title">Arena Title</h2>
       <div id="modalBody" class="modal-body">
         <div class="modal-section-title">Details</div>
         <p id="modalDetails">Arena details go here.</p>
-        <div class="modal-section-title">Rules & Restrictions</div>
+        <div class="modal-section-title">Rules &amp; Restrictions</div>
         <ul id="modalRules">
           <li>Rule 1</li>
         </ul>
@@ -411,34 +429,30 @@
     </div>
   </div>
 
+  <script src="js/main.js"></script>
   <script>
     document.addEventListener('DOMContentLoaded', () => {
-      const modal = document.getElementById('arenaModal');
+      const modal         = document.getElementById('arenaModal');
       const closeModalBtn = document.getElementById('closeModal');
-      const modalTitle = document.getElementById('modalTitle');
-      const modalDetails = document.getElementById('modalDetails');
-      const modalRules = document.getElementById('modalRules');
+      const modalTitle    = document.getElementById('modalTitle');
+      const modalDetails  = document.getElementById('modalDetails');
+      const modalRules    = document.getElementById('modalRules');
 
-      
       // Tiles logic
       const categoriesView = document.getElementById('categoriesView');
-      const eventsView = document.getElementById('eventsView');
-      const backBtn = document.getElementById('backToCategories');
-      const categoryTiles = document.querySelectorAll('.category-tile');
-      const ruleSections = document.querySelectorAll('#eventsView .rules-section');
+      const eventsView     = document.getElementById('eventsView');
+      const backBtn        = document.getElementById('backToCategories');
+      const categoryTiles  = document.querySelectorAll('.category-tile');
+      const ruleSections   = document.querySelectorAll('#eventsView .rules-section');
 
       categoryTiles.forEach(tile => {
         tile.addEventListener('click', () => {
           const targetId = tile.getAttribute('data-target');
           categoriesView.style.display = 'none';
           eventsView.style.display = 'block';
-          
+
           ruleSections.forEach(section => {
-            if(section.id === targetId) {
-              section.style.display = 'block';
-            } else {
-              section.style.display = 'none';
-            }
+            section.style.display = (section.id === targetId) ? 'block' : 'none';
           });
         });
       });
@@ -448,19 +462,17 @@
         categoriesView.style.display = 'grid';
       });
 
-      // Add click event to all arena items
-      const items = document.querySelectorAll('.rules-full-item');
-      items.forEach(item => {
+      // Arena item modal
+      document.querySelectorAll('.rules-full-item').forEach(item => {
         item.addEventListener('click', () => {
-          const title = item.getAttribute('data-title');
+          const title   = item.getAttribute('data-title');
           const details = item.getAttribute('data-details');
-          const rules = item.getAttribute('data-rules');
+          const rules   = item.getAttribute('data-rules');
 
-          if(title && details && rules) {
-            modalTitle.textContent = title;
+          if (title && details && rules) {
+            modalTitle.textContent   = title;
             modalDetails.textContent = details;
-            
-            // Parse rules split by '|'
+
             const rulesArray = rules.split('|');
             modalRules.innerHTML = '';
             rulesArray.forEach(rule => {
@@ -469,37 +481,25 @@
               modalRules.appendChild(li);
             });
 
-            // Show modal
             modal.style.display = 'flex';
-            // Slight delay for opacity transition to trigger
-            setTimeout(() => {
-              modal.classList.add('show');
-            }, 10);
+            setTimeout(() => modal.classList.add('show'), 10);
           }
         });
       });
 
       const closeModal = () => {
         modal.classList.remove('show');
-        setTimeout(() => {
-          modal.style.display = 'none';
-        }, 300); // Wait for transition
+        setTimeout(() => { modal.style.display = 'none'; }, 300);
       };
 
       closeModalBtn.addEventListener('click', closeModal);
 
-      // Close modal on outside click
       window.addEventListener('click', (e) => {
-        if (e.target === modal) {
-          closeModal();
-        }
+        if (e.target === modal) closeModal();
       });
-      
-      // Close on escape key
+
       window.addEventListener('keydown', (e) => {
-        if(e.key === 'Escape' && modal.classList.contains('show')) {
-          closeModal();
-        }
+        if (e.key === 'Escape' && modal.classList.contains('show')) closeModal();
       });
     });
   </script>

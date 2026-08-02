@@ -5,89 +5,38 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Monkey Playzone — Welcome to the Jungle | FiveM PvP Server</title>
   <meta name="description" content="The most brutal FiveM PvP experience in Los Santos. Custom weapons, faction warfare, no rules, no mercy." />
-  <link rel="icon" href="assets/logo.png" type="image/png" />
+
+  <!-- Favicon -->
+  <link rel="icon" href="assets/favicon.png" type="image/png" />
+
+  <!-- Open Graph / Social -->
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://monkeyplayzone.com/" />
+  <meta property="og:title" content="Monkey Playzone — Welcome to the Jungle | FiveM PvP Server" />
+  <meta property="og:description" content="The most brutal FiveM PvP experience in Los Santos. Custom weapons, faction warfare, no rules, no mercy." />
+  <meta property="og:image" content="https://monkeyplayzone.com/assets/logo-192.png" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Monkey Playzone — FiveM PvP Server" />
+  <meta name="twitter:description" content="The most brutal FiveM PvP experience in Los Santos." />
+  <meta name="twitter:image" content="https://monkeyplayzone.com/assets/logo-192.png" />
+  <meta name="theme-color" content="#1A0D0D" />
+
+  <!-- Canonical -->
+  <link rel="canonical" href="https://monkeyplayzone.com/" />
+
+  <!-- Preconnect for fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <!-- Google Fonts with display=swap to prevent render-blocking -->
   <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Anton&family=Rajdhani:wght@400;500;600;700&family=Barlow:wght@300;400;500;600&display=swap" rel="stylesheet" />
+
+  <!-- Preload hero image to avoid LCP delay -->
+  <link rel="preload" as="image" href="assets/jungle-bg.jpg" />
+
   <link rel="stylesheet" href="css/style.css" />
   <link rel="stylesheet" href="css/home.css" />
   <link rel="stylesheet" href="css/pages.css" />
   <style>
-    /* Uniform Top Header Overrides */
-    .top-nav {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      z-index: 1000;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 18px 40px;
-      background: linear-gradient(180deg, rgba(10, 5, 5, 0.95) 0%, rgba(10, 5, 5, 0.7) 100%);
-      backdrop-filter: blur(12px);
-      border-bottom: 1px solid rgba(212, 161, 76, 0.25);
-      transition: all 0.3s ease;
-    }
-
-    .top-nav-inner {
-      display: flex;
-      align-items: center;
-      gap: 16px;
-      flex-wrap: wrap;
-    }
-
-    .top-nav-logo {
-      display: flex;
-      align-items: center;
-      gap: 12px;
-      text-decoration: none;
-    }
-
-    .top-nav-logo img {
-      width: 44px;
-      height: 44px;
-      object-fit: cover;
-      border-radius: 50%;
-      border: 1px solid var(--gold);
-    }
-
-    .top-nav-logo span {
-      font-family: 'Bebas Neue', sans-serif;
-      font-size: 1.4rem;
-      letter-spacing: 0.12em;
-      color: var(--cream);
-    }
-
-    .top-nav-links {
-      display: flex;
-      align-items: center;
-      gap: 8px;
-    }
-
-    .nav-link {
-      font-family: 'Bebas Neue', sans-serif;
-      font-size: 1.15rem;
-      letter-spacing: 0.16em;
-      text-transform: uppercase;
-      color: rgba(242, 230, 217, 0.8);
-      text-decoration: none;
-      padding: 6px 14px;
-      transition: all 0.25s ease;
-    }
-
-    .nav-link:hover, .nav-link.active {
-      color: #D4A14C;
-      text-shadow: 0 0 12px rgba(212, 161, 76, 0.5);
-    }
-
-    .nav-sep {
-      width: 1px;
-      height: 14px;
-      background: rgba(212, 161, 76, 0.3);
-      flex-shrink: 0;
-    }
-
     /* Landing Section Full Height */
     .hero-landing {
       position: relative;
@@ -175,14 +124,6 @@
     html {
       scroll-behavior: smooth;
     }
-
-    @media (max-width: 900px) {
-      .top-nav {
-        padding: 14px 18px;
-      }
-      .top-nav-logo span { display: none; }
-      .nav-link { font-size: 1rem; padding: 4px 8px; }
-    }
   </style>
 </head>
 <body>
@@ -193,11 +134,11 @@
   <!-- UNIFORM TOP NAVIGATION HEADER -->
   <header class="top-nav" id="navbar">
     <a href="#hero" class="top-nav-logo">
-      <img src="assets/logo.png" alt="Monkey Playzone" />
+      <img src="assets/logo.jpg" alt="Monkey Playzone" />
       <span>MONKEY PLAYZONE</span>
     </a>
     <nav class="top-nav-links">
-      <a href="index.html" class="nav-link">Home</a>
+      <a href="index.html" class="nav-link active">Home</a>
       <div class="nav-sep"></div>
       <a href="rules.html" class="nav-link">Rules</a>
       <div class="nav-sep"></div>
@@ -205,21 +146,41 @@
       <div class="nav-sep"></div>
       <a href="team.html" class="nav-link">Team</a>
       <div class="nav-sep"></div>
-      <a href="#gallery" class="nav-link">Gallery</a>
+      <a href="gallery.html" class="nav-link">Gallery</a>
       <div class="nav-sep"></div>
-      <a href="#faq" class="nav-link">FAQ</a>
+      <a href="faq.html" class="nav-link">FAQ</a>
     </nav>
+    <button class="top-nav-hamburger" id="topNavHamburger" aria-label="Open navigation menu">
+      <span></span><span></span><span></span>
+    </button>
     <a href="cfx://connect/monkeyplayzone" class="btn btn-primary btn-sm" style="clip-path: polygon(6px 0, 100% 0, calc(100% - 6px) 100%, 0 100%);">
       ⚡ CONNECT
     </a>
   </header>
+
+  <!-- MOBILE MENU -->
+  <div class="mobile-menu-overlay" id="mobileMenuOverlay">
+    <div class="mobile-menu-inner">
+      <button class="mobile-menu-close" id="mobileMenuClose" aria-label="Close navigation menu">✕</button>
+      <img src="assets/logo.jpg" alt="Logo" class="mobile-logo" />
+      <ul class="mobile-nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="rules.html">Rules</a></li>
+        <li><a href="arena.html">Arena</a></li>
+        <li><a href="team.html">Team</a></li>
+        <li><a href="gallery.html">Gallery</a></li>
+        <li><a href="faq.html">FAQ</a></li>
+      </ul>
+      <a href="cfx://connect/monkeyplayzone" class="btn btn-primary mobile-connect-btn">⚡ Connect Now</a>
+    </div>
+  </div>
 
   <!-- 1. HERO LANDING SECTION -->
   <section class="hero-landing" id="hero">
     <div class="bg-photo"></div>
     <div class="bg-overlay"></div>
     <div class="hero-content-centered">
-      <img src="assets/logo.png" alt="Monkey Playzone" class="hero-centered-logo" />
+      <img src="assets/logo.jpg" alt="Monkey Playzone" class="hero-centered-logo" />
       <h1 class="hero-centered-headline">Welcome to the Jungle</h1>
       <p class="hero-centered-subline">
         The most brutal FiveM PvP experience in Los Santos.<br />
@@ -229,7 +190,7 @@
         <a href="cfx://connect/monkeyplayzone" class="btn btn-primary btn-lg">
           <span class="btn-icon">⚡</span> Connect Now
         </a>
-        <a href="https://discord.gg/monkeyplayzone" target="_blank" class="btn btn-outline btn-lg">
+        <a href="https://discord.gg/monkeyplayzone" target="_blank" rel="noopener noreferrer" class="btn btn-outline btn-lg">
           Join Discord
         </a>
       </div>
@@ -247,12 +208,12 @@
         <div class="status-divider"></div>
         <div class="status-item">
           <span class="status-label">PLAYERS</span>
-          <span class="status-value" id="playerCount">48 / 64</span>
+          <span class="status-value" id="playerCount">-- / --</span>
         </div>
         <div class="status-divider"></div>
         <div class="status-item">
           <span class="status-label">PING</span>
-          <span class="status-value" id="serverPing">22ms</span>
+          <span class="status-value" id="serverPing">--ms</span>
         </div>
         <div class="status-divider"></div>
         <div class="status-item">
@@ -262,7 +223,7 @@
         <div class="status-divider"></div>
         <div class="status-item">
           <span class="status-label">SERVER IP</span>
-          <span class="status-value copy-ip" id="copyIp" title="Click to copy">cfx.re/join/xllrkdx</span>
+          <span class="status-value copy-ip" id="copyIp" title="Click to copy" role="button" tabindex="0">cfx.re/join/xllrkdx</span>
         </div>
       </div>
     </div>
@@ -291,7 +252,7 @@
         </div>
         <div class="feature-card">
           <div class="feature-icon">🔫</div>
-          <h3 class="feature-title">Custom Weapons & Vehicles</h3>
+          <h3 class="feature-title">Custom Weapons &amp; Vehicles</h3>
           <p class="feature-desc">Over 50+ custom weapons and vehicles. From jungle machetes to armored technicals — the arsenal is yours.</p>
           <div class="feature-card-border"></div>
         </div>
@@ -305,13 +266,7 @@
     </div>
   </section>
 
-
-
-
-
-
-
-  <!-- 10. GALLERY SECTION -->
+  <!-- GALLERY SECTION -->
   <section class="gallery-main" id="gallery" style="padding: 100px 0;">
     <div class="container">
       <div class="section-header">
@@ -335,8 +290,7 @@
     </div>
   </section>
 
-
-  <!-- 12. FAQ SECTION -->
+  <!-- FAQ SECTION -->
   <section class="faq-main" id="faq" style="padding: 100px 0;">
     <div class="container">
       <div class="section-header">
@@ -358,41 +312,51 @@
 
   <!-- FOOTER -->
   <footer class="footer">
+    <div class="footer-top">
+      <div class="container">
+        <div class="footer-grid">
+          <div class="footer-brand">
+            <img src="assets/logo.jpg" alt="Monkey Playzone" class="footer-logo" loading="lazy" />
+            <p class="footer-tagline">Welcome to the Jungle.</p>
+            <p class="footer-desc">The most ruthless hardcore FiveM PvP server. Built by veterans, for warriors.</p>
+            <div class="footer-socials">
+              <a href="#" class="social-icon" title="Twitter" aria-label="Twitter">𝕏</a>
+              <a href="https://discord.gg/monkeyplayzone" target="_blank" rel="noopener noreferrer" class="social-icon" title="Discord" aria-label="Discord">💬</a>
+              <a href="#" class="social-icon" title="YouTube" aria-label="YouTube">▶</a>
+              <a href="#" class="social-icon" title="TikTok" aria-label="TikTok">♪</a>
+            </div>
+          </div>
+          <div class="footer-col">
+            <h4 class="footer-col-title">Navigation</h4>
+            <ul class="footer-links">
+              <li><a href="index.html">Home</a></li>
+              <li><a href="rules.html">Rules</a></li>
+              <li><a href="arena.html">Arena</a></li>
+            </ul>
+          </div>
+          <div class="footer-col">
+            <h4 class="footer-col-title">Community</h4>
+            <ul class="footer-links">
+              <li><a href="gallery.html">Gallery</a></li>
+              <li><a href="team.html">Team</a></li>
+              <li><a href="faq.html">FAQ</a></li>
+            </ul>
+          </div>
+          <div class="footer-col">
+            <h4 class="footer-col-title">Connect</h4>
+            <p class="footer-ip">cfx.re/join/xllrkdx</p>
+            <a href="cfx://connect/monkeyplayzone" class="btn btn-primary btn-sm">⚡ Join Server</a>
+          </div>
+        </div>
+      </div>
+    </div>
     <div class="footer-bottom">
       <div class="container">
-        <p>© 2024 Monkey Playzone. All rights reserved. Not affiliated with Rockstar Games or FiveM.</p>
+        <p>© <span class="footer-year">2025</span> Monkey Playzone. All rights reserved. Not affiliated with Rockstar Games or FiveM.</p>
       </div>
     </div>
   </footer>
 
   <script src="js/main.js"></script>
-  <script>
-    function handleSubmit(e) {
-      e.preventDefault();
-      document.getElementById('whitelistForm').style.display = 'none';
-      document.getElementById('successMsg').style.display = 'block';
-    }
-
-    // Active nav highlight on scroll
-    window.addEventListener('scroll', () => {
-      const sections = document.querySelectorAll('section[id]');
-      const scrollY = window.pageYOffset;
-
-      sections.forEach(current => {
-        const sectionHeight = current.offsetHeight;
-        const sectionTop = current.offsetTop - 120;
-        const sectionId = current.getAttribute('id');
-        const navLink = document.querySelector('.top-nav-links a[href*=' + sectionId + ']');
-
-        if (navLink) {
-          if (scrollY > sectionTop && scrollY <= sectionTop + sectionHeight) {
-            navLink.classList.add('active');
-          } else {
-            navLink.classList.remove('active');
-          }
-        }
-      });
-    });
-  </script>
 </body>
 </html>

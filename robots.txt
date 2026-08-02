@@ -1,0 +1,8 @@
+# robots.txt — Monkey Playzone
+User-agent: *
+Allow: /
+
+# Block access to scratch/dev files
+Disallow: /scratch/
+
+Sitemap: https://monkeyplayzone.com/sitemap.xml

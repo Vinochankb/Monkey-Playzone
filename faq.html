@@ -5,34 +5,65 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>FAQ — Monkey Playzone | Common Questions</title>
   <meta name="description" content="Frequently asked questions about joining Monkey Playzone — how to connect, whitelist, rules, bans, and more." />
+
+  <!-- Favicon -->
   <link rel="icon" href="assets/favicon.png" type="image/png" />
+
+  <!-- Open Graph / Social -->
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://monkeyplayzone.com/faq.html" />
+  <meta property="og:title" content="FAQ — Monkey Playzone | Common Questions" />
+  <meta property="og:description" content="Frequently asked questions about joining Monkey Playzone — how to connect, whitelist, rules, bans, and more." />
+  <meta property="og:image" content="https://monkeyplayzone.com/assets/logo-192.png" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="theme-color" content="#1A0D0D" />
+
+  <!-- Canonical -->
+  <link rel="canonical" href="https://monkeyplayzone.com/faq.html" />
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Anton&family=Bebas+Neue&family=Rajdhani:wght@400;500;600;700&family=Barlow:wght@300;400;500;600&display=swap" rel="stylesheet" />
+
   <link rel="stylesheet" href="css/style.css" />
   <link rel="stylesheet" href="css/pages.css" />
 </head>
 <body>
   <div class="noise-overlay"></div>
 
-  <nav class="navbar scrolled" id="navbar">
-    <div class="nav-inner container">
-      <a href="index.html" class="nav-logo"><img src="assets/logo.png" alt="Monkey Playzone" class="logo-img" /></a>
-      <ul class="nav-links" id="navLinks">
-        <li><a href="index.html" class="nav-link">Home</a></li>
-        <li><a href="rules.html" class="nav-link">Rules</a></li>
-        <li><a href="arena.html" class="nav-link">Arena</a></li>
-        <li><a href="team.html" class="nav-link">Team</a></li>
-      </ul>
-      <div class="nav-actions">
-        <a href="cfx://connect/monkeyplayzone" class="btn btn-primary btn-connect">⚡ Connect to Server</a>
-        <button class="hamburger" id="hamburger"><span></span><span></span><span></span></button>
-      </div>
-    </div>
-  </nav>
+  <!-- UNIFORM TOP NAVIGATION HEADER -->
+  <header class="top-nav" id="navbar">
+    <a href="index.html" class="top-nav-logo">
+      <img src="assets/logo.jpg" alt="Monkey Playzone" />
+      <span>MONKEY PLAYZONE</span>
+    </a>
+    <nav class="top-nav-links">
+      <a href="index.html" class="nav-link">Home</a>
+      <div class="nav-sep"></div>
+      <a href="rules.html" class="nav-link">Rules</a>
+      <div class="nav-sep"></div>
+      <a href="arena.html" class="nav-link">Arena</a>
+      <div class="nav-sep"></div>
+      <a href="team.html" class="nav-link">Team</a>
+      <div class="nav-sep"></div>
+      <a href="gallery.html" class="nav-link">Gallery</a>
+      <div class="nav-sep"></div>
+      <a href="faq.html" class="nav-link active">FAQ</a>
+    </nav>
+    <button class="top-nav-hamburger" id="topNavHamburger" aria-label="Open navigation menu">
+      <span></span><span></span><span></span>
+    </button>
+    <a href="cfx://connect/monkeyplayzone" class="btn btn-primary btn-sm" style="clip-path: polygon(6px 0, 100% 0, calc(100% - 6px) 100%, 0 100%);">
+      ⚡ CONNECT
+    </a>
+  </header>
 
+  <!-- MOBILE MENU -->
   <div class="mobile-menu-overlay" id="mobileMenuOverlay">
     <div class="mobile-menu-inner">
-      <button class="mobile-menu-close" id="mobileMenuClose">✕</button>
-      <img src="assets/logo.png" alt="Logo" class="mobile-logo" />
+      <button class="mobile-menu-close" id="mobileMenuClose" aria-label="Close navigation menu">✕</button>
+      <img src="assets/logo.jpg" alt="Logo" class="mobile-logo" />
       <ul class="mobile-nav-links">
         <li><a href="index.html">Home</a></li>
         <li><a href="rules.html">Rules</a></li>
@@ -83,11 +114,11 @@
         </div>
 
         <!-- WHITELIST -->
-        <h2 class="faq-category-title">Whitelist & Applications</h2>
+        <h2 class="faq-category-title">Whitelist &amp; Applications</h2>
 
         <div class="faq-item">
           <button class="faq-q">How do I apply for whitelist?<span class="faq-arrow"></span></button>
-          <div class="faq-a"><div class="faq-a-inner">Go to our and fill out the application form. You'll need: your Discord username, FiveM character name, FiveM ID, age, RP experience, and agreement to our rules. Applications are reviewed within 24–72 hours.</div></div>
+          <div class="faq-a"><div class="faq-a-inner">Go to our Discord and fill out the application form. You'll need: your Discord username, FiveM character name, FiveM ID, age, RP experience, and agreement to our rules. Applications are reviewed within 24–72 hours.</div></div>
         </div>
 
         <div class="faq-item">
@@ -101,7 +132,7 @@
         </div>
 
         <!-- RULES & BANS -->
-        <h2 class="faq-category-title">Rules & Bans</h2>
+        <h2 class="faq-category-title">Rules &amp; Bans</h2>
 
         <div class="faq-item">
           <button class="faq-q">I was banned. How do I appeal?<span class="faq-arrow"></span></button>
@@ -119,7 +150,7 @@
         </div>
 
         <!-- STORE -->
-        <h2 class="faq-category-title">Store & Donations</h2>
+        <h2 class="faq-category-title">Store &amp; Donations</h2>
 
         <div class="faq-item">
           <button class="faq-q">Are store purchases pay-to-win?<span class="faq-arrow"></span></button>
@@ -140,7 +171,7 @@
         <div style="margin-top:60px; background:var(--bg-maroon); border:var(--border-gold); padding:36px; text-align:center; clip-path:polygon(0 0, calc(100% - 16px) 0, 100% 16px, 100% 100%, 16px 100%, 0 calc(100% - 16px));">
           <h3 style="font-family:var(--font-heading); font-size:1.5rem; letter-spacing:0.08em; text-transform:uppercase; color:var(--cream); margin-bottom:12px;">Still need help?</h3>
           <p style="font-family:var(--font-detail); color:var(--cream-muted); margin-bottom:24px;">Open a support ticket in Discord. Our team responds within a few hours.</p>
-          <a href="https://discord.gg/monkeyplayzone" target="_blank" class="btn btn-primary btn-lg">💬 Open a Ticket</a>
+          <a href="https://discord.gg/monkeyplayzone" target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-lg">💬 Open a Ticket</a>
         </div>
 
       </div>
@@ -152,14 +183,14 @@
       <div class="container">
         <div class="footer-grid">
           <div class="footer-brand">
-            <img src="assets/logo.png" alt="Monkey Playzone" class="footer-logo" />
+            <img src="assets/logo.jpg" alt="Monkey Playzone" class="footer-logo" loading="lazy" />
             <p class="footer-tagline">Welcome to the Jungle.</p>
             <p class="footer-desc">The most ruthless hardcore FiveM PvP server.</p>
             <div class="footer-socials">
-              <a href="#" class="social-icon">𝕏</a>
-              <a href="#" class="social-icon">💬</a>
-              <a href="#" class="social-icon">▶</a>
-              <a href="#" class="social-icon">♪</a>
+              <a href="#" class="social-icon" title="Twitter" aria-label="Twitter">𝕏</a>
+              <a href="https://discord.gg/monkeyplayzone" target="_blank" rel="noopener noreferrer" class="social-icon" title="Discord" aria-label="Discord">💬</a>
+              <a href="#" class="social-icon" title="YouTube" aria-label="YouTube">▶</a>
+              <a href="#" class="social-icon" title="TikTok" aria-label="TikTok">♪</a>
             </div>
           </div>
           <div class="footer-col">
@@ -167,7 +198,7 @@
             <ul class="footer-links">
               <li><a href="index.html">Home</a></li>
               <li><a href="rules.html">Rules</a></li>
-        <li><a href="arena.html">Arena</a></li>
+              <li><a href="arena.html">Arena</a></li>
             </ul>
           </div>
           <div class="footer-col">
@@ -188,7 +219,7 @@
     </div>
     <div class="footer-bottom">
       <div class="container">
-        <p>© 2024 Monkey Playzone. All rights reserved.</p>
+        <p>© <span class="footer-year">2025</span> Monkey Playzone. All rights reserved.</p>
       </div>
     </div>
   </footer>

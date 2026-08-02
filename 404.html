@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>404 — Page Not Found | Monkey Playzone</title>
+  <meta name="description" content="The page you were looking for doesn't exist. Head back to Monkey Playzone." />
+  <meta name="robots" content="noindex, follow" />
+
+  <!-- Favicon -->
+  <link rel="icon" href="assets/favicon.png" type="image/png" />
+  <meta name="theme-color" content="#1A0D0D" />
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Barlow:wght@300;400;500&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="css/style.css" />
+  <style>
+    .error-page {
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 40px 20px;
+      background:
+        radial-gradient(ellipse 80% 60% at 50% 0%, rgba(199,44,44,0.12) 0%, transparent 60%),
+        var(--bg-deep);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .error-page::before {
+      content: '404';
+      position: absolute;
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: clamp(200px, 30vw, 400px);
+      color: rgba(199,44,44,0.04);
+      letter-spacing: -0.02em;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      pointer-events: none;
+      user-select: none;
+      line-height: 1;
+    }
+
+    .error-logo {
+      width: 90px;
+      height: 90px;
+      border-radius: 50%;
+      border: 2px solid var(--gold);
+      object-fit: cover;
+      margin-bottom: 32px;
+      filter: drop-shadow(0 0 20px rgba(199,44,44,0.5));
+      animation: logoFloat 5s ease-in-out infinite;
+    }
+
+    @keyframes logoFloat {
+      0%, 100% { transform: translateY(0); }
+      50%       { transform: translateY(-8px); }
+    }
+
+    .error-code {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: clamp(60px, 10vw, 120px);
+      letter-spacing: 0.1em;
+      color: var(--red-bright);
+      line-height: 1;
+      text-shadow: 0 0 40px rgba(199,44,44,0.5);
+      margin-bottom: 8px;
+      position: relative;
+    }
+
+    .error-title {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: clamp(1.4rem, 3vw, 2.2rem);
+      letter-spacing: 0.18em;
+      color: var(--gold);
+      text-transform: uppercase;
+      margin-bottom: 20px;
+      position: relative;
+    }
+
+    .error-desc {
+      font-family: 'Barlow', sans-serif;
+      font-weight: 300;
+      font-size: 1.05rem;
+      color: var(--cream-muted);
+      max-width: 380px;
+      line-height: 1.7;
+      margin-bottom: 40px;
+      position: relative;
+    }
+
+    .error-actions {
+      display: flex;
+      gap: 16px;
+      flex-wrap: wrap;
+      justify-content: center;
+      position: relative;
+    }
+  </style>
+</head>
+<body>
+  <div class="noise-overlay"></div>
+
+  <div class="error-page">
+    <img src="assets/logo.jpg" alt="Monkey Playzone" class="error-logo" />
+    <div class="error-code">404</div>
+    <div class="error-title">You Got Lost in the Jungle</div>
+    <p class="error-desc">
+      The page you're looking for doesn't exist, was moved, or you typed the wrong URL. Don't worry — the jungle is big.
+    </p>
+    <div class="error-actions">
+      <a href="index.html" class="btn btn-primary btn-lg">🏠 Back to Home</a>
+      <a href="https://discord.gg/monkeyplayzone" target="_blank" rel="noopener noreferrer" class="btn btn-outline btn-lg">💬 Discord</a>
+    </div>
+  </div>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
