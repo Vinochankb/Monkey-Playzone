@@ -77,7 +77,7 @@
   const copyIpEl = document.getElementById('copyIp');
   if (copyIpEl) {
     copyIpEl.addEventListener('click', () => {
-      navigator.clipboard.writeText('cfx.re/join/xllrkdx').then(() => {
+      navigator.clipboard.writeText('cfx.re/join/a4zmokz').then(() => {
         const orig = copyIpEl.textContent;
         copyIpEl.textContent = '✓ COPIED!';
         copyIpEl.style.color = '#2ECC71';
@@ -111,9 +111,12 @@
   const currentPath = window.location.pathname.split('/').pop() || 'index.html';
   document.querySelectorAll('.nav-link').forEach(link => {
     const href = link.getAttribute('href');
-    if (href === currentPath || (currentPath === '' && href === 'index.html')) {
+    const isHomeLink = href === '/' || href === 'index.html';
+    const isHomePath = currentPath === 'index.html' || currentPath === '';
+    
+    if (href === currentPath || (isHomeLink && isHomePath)) {
       link.classList.add('active');
-    } else if (!href.startsWith('#')) {
+    } else if (href && !href.startsWith('#')) {
       link.classList.remove('active');
     }
   });
@@ -202,14 +205,22 @@
     }, { passive: true });
   }
 
+  // ── COMING SOON BLUR ON CLICK FOR GALLERY ─────────────────
+  document.querySelectorAll('.gallery-grid-item').forEach(item => {
+    item.addEventListener('click', () => {
+      item.classList.add('coming-soon');
+    });
+  });
+
 })();
 
 // ============================================================
 // FIVEM SERVER STATUS FETCHER
 // ============================================================
 (function() {
-  const JOIN_CODE = 'xllrkdx';
-  const API_URL = `https://servers-frontend.fivem.net/api/servers/single/${JOIN_CODE}`;
+  // Calls our own Worker proxy → Worker fetches from FiveM server-side
+  // This avoids CORS errors that occur when the browser calls FiveM directly
+  const STATUS_API = '/api/server-status';
 
   const playerCountEl = document.getElementById('playerCount');
   const serverPingEl  = document.getElementById('serverPing');
@@ -219,27 +230,22 @@
     if (!playerCountEl || !serverPingEl || !statusEl) return;
 
     try {
-      const start = Date.now();
-      const response = await fetch(API_URL);
-      const ping = Date.now() - start;
+      const start    = Date.now();
+      const response = await fetch(STATUS_API);
+      const ping     = Date.now() - start;
+      const data     = await response.json();
 
-      if (response.ok) {
-        const data = await response.json();
-        const players    = data.Data.clients;
-        const maxPlayers = data.Data.sv_maxclients;
-
-        playerCountEl.textContent = `${players} / ${maxPlayers}`;
+      if (data.online) {
+        playerCountEl.textContent = `${data.players} / ${data.maxPlayers}`;
         serverPingEl.textContent  = `${ping}ms`;
-
         statusEl.innerHTML = '<span class="pulse-dot sm"></span>ONLINE';
         statusEl.style.color = '#2ecc71';
       } else {
-        throw new Error('Server offline or API error');
+        throw new Error('offline');
       }
-    } catch (error) {
-      playerCountEl.textContent = `0 / 0`;
-      serverPingEl.textContent  = `---`;
-
+    } catch {
+      playerCountEl.textContent = '0 / 0';
+      serverPingEl.textContent  = '---';
       statusEl.innerHTML = '<span class="pulse-dot sm" style="background:#e74c3c; box-shadow:0 0 8px #e74c3c;"></span>OFFLINE';
       statusEl.style.color = '#e74c3c';
     }

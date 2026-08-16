@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿﻿<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
@@ -11,7 +11,7 @@
 
   <!-- Open Graph / Social -->
   <meta property="og:type" content="website" />
-  <meta property="og:url" content="https://monkeyplayzone.com/arena.html" />
+  <meta property="og:url" content="https://monkeyplayzone.com/arena" />
   <meta property="og:title" content="Arenas &amp; Events — Monkey Playzone | FiveM PvP Server" />
   <meta property="og:description" content="Explore the diverse arenas and events of Monkey Playzone. Dominate the PvP Arena, race to the finish line in the Racing Arena, and participate in special server events." />
   <meta property="og:image" content="https://monkeyplayzone.com/assets/logo-192.png" />
@@ -19,7 +19,7 @@
   <meta name="theme-color" content="#1A0D0D" />
 
   <!-- Canonical -->
-  <link rel="canonical" href="https://monkeyplayzone.com/arena.html" />
+  <link rel="canonical" href="https://monkeyplayzone.com/arena" />
 
   <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -34,6 +34,7 @@
       transition: all 0.3s ease;
       position: relative;
       border-radius: 12px;
+      overflow: hidden;
     }
     .rules-full-item:hover {
       transform: translateY(-4px);
@@ -55,6 +56,34 @@
     .rules-full-item:hover::after {
       opacity: 1;
     }
+    .rules-full-item.coming-soon {
+      cursor: default;
+      border-color: rgba(212, 161, 76, 0.45);
+    }
+    .rules-full-item.coming-soon .rules-full-num,
+    .rules-full-item.coming-soon .rules-full-content {
+      filter: blur(4px);
+      opacity: 0.28;
+      transition: filter 0.25s ease, opacity 0.25s ease;
+      pointer-events: none;
+      user-select: none;
+    }
+    .rules-full-item.coming-soon::after {
+      content: 'COMING SOON';
+      position: absolute;
+      inset: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: clamp(2rem, 4vw, 3.4rem);
+      letter-spacing: 0.18em;
+      color: var(--gold);
+      background: linear-gradient(145deg, rgba(10, 5, 5, 0.68), rgba(26, 13, 13, 0.8));
+      text-shadow: 0 0 18px rgba(212, 161, 76, 0.45);
+      opacity: 1;
+      pointer-events: none;
+    }
 
     /* Tiles View Styles */
     .category-tiles {
@@ -73,6 +102,35 @@
       transition: all 0.3s ease;
       position: relative;
       overflow: hidden;
+    }
+    .category-tile.coming-soon {
+      cursor: default;
+      border-color: rgba(212, 161, 76, 0.45);
+    }
+    .category-tile.coming-soon .tile-icon,
+    .category-tile.coming-soon h3,
+    .category-tile.coming-soon p {
+      filter: blur(4px);
+      opacity: 0.28;
+      transition: filter 0.25s ease, opacity 0.25s ease;
+      pointer-events: none;
+      user-select: none;
+    }
+    .category-tile.coming-soon::after {
+      content: 'COMING SOON';
+      position: absolute;
+      inset: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: clamp(2rem, 4vw, 3.4rem);
+      letter-spacing: 0.18em;
+      color: var(--gold);
+      background: linear-gradient(145deg, rgba(10, 5, 5, 0.68), rgba(26, 13, 13, 0.8));
+      text-shadow: 0 0 18px rgba(212, 161, 76, 0.45);
+      opacity: 1;
+      pointer-events: none;
     }
     .category-tile:hover {
       transform: translateY(-8px);
@@ -214,27 +272,33 @@
     }
   </style>
 </head>
-<body>
+<body class="page-coming-soon">
+  <div class="coming-soon-full-overlay">
+    <h1>COMING SOON</h1>
+    <p>Server Arenas &amp; Battlegrounds are currently under active development. Stay tuned on Discord for official launch announcements!</p>
+    <div class="cs-actions">
+      <a href="/" class="btn btn-secondary">🏠 Back to Home</a>
+      <a href="https://discord.gg/aCAvhwjnQx" target="_blank" rel="noopener noreferrer" class="btn btn-primary"><svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg"><path d="M20.317 4.37a19.791 19.791 0 0 0-4.885-1.515.074.074 0 0 0-.079.037c-.21.375-.444.864-.608 1.25a18.27 18.27 0 0 0-5.487 0 12.64 12.64 0 0 0-.617-1.25.077.077 0 0 0-.079-.037A19.736 19.736 0 0 0 3.677 4.37a.07.07 0 0 0-.032.027C.533 9.046-.32 13.58.099 18.057c.002.022.015.043.03.056a19.9 19.9 0 0 0 5.993 3.03.078.078 0 0 0 .084-.028 14.09 14.09 0 0 0 1.226-1.994.076.076 0 0 0-.041-.106 13.107 13.107 0 0 1-1.872-.892.077.077 0 0 1-.008-.128 10.2 10.2 0 0 0 .372-.292.074.074 0 0 1 .077-.01c3.928 1.793 8.18 1.793 12.062 0a.074.074 0 0 1 .078.01c.12.098.246.198.373.292a.077.077 0 0 1-.006.127 12.299 12.299 0 0 1-1.873.892.077.077 0 0 0-.041.107c.36.698.772 1.362 1.225 1.993a.076.076 0 0 0 .084.028 19.839 19.839 0 0 0 6.002-3.03.077.077 0 0 0 .032-.054c.5-5.177-.838-9.674-3.549-13.66a.061.061 0 0 0-.031-.030z"/></svg> Join Discord</a>
+    </div>
+  </div>
   <div class="noise-overlay"></div>
 
   <!-- UNIFORM TOP NAVIGATION HEADER -->
   <header class="top-nav" id="navbar">
-    <a href="index.html" class="top-nav-logo">
+    <a href="/" class="top-nav-logo">
       <img src="assets/logo.jpg" alt="Monkey Playzone" />
       <span>MONKEY PLAYZONE</span>
     </a>
     <nav class="top-nav-links">
-      <a href="index.html" class="nav-link">Home</a>
+      <a href="/" class="nav-link">Home</a>
       <div class="nav-sep"></div>
-      <a href="rules.html" class="nav-link">Rules</a>
+      <a href="rules" class="nav-link">Rules</a>
       <div class="nav-sep"></div>
-      <a href="arena.html" class="nav-link active">Arena</a>
+      <a href="arena" class="nav-link active">Arena</a>
       <div class="nav-sep"></div>
-      <a href="team.html" class="nav-link">Team</a>
+      <a href="team" class="nav-link">Team</a>
       <div class="nav-sep"></div>
-      <a href="gallery.html" class="nav-link">Gallery</a>
-      <div class="nav-sep"></div>
-      <a href="faq.html" class="nav-link">FAQ</a>
+      <a href="faq" class="nav-link">FAQ</a>
     </nav>
     <button class="top-nav-hamburger" id="topNavHamburger" aria-label="Open navigation menu">
       <span></span><span></span><span></span>
@@ -250,12 +314,11 @@
       <button class="mobile-menu-close" id="mobileMenuClose" aria-label="Close navigation menu">✕</button>
       <img src="assets/logo.jpg" alt="Logo" class="mobile-logo" />
       <ul class="mobile-nav-links">
-        <li><a href="index.html">Home</a></li>
-        <li><a href="rules.html">Rules</a></li>
-        <li><a href="arena.html">Arena</a></li>
-        <li><a href="team.html">Team</a></li>
-        <li><a href="gallery.html">Gallery</a></li>
-        <li><a href="faq.html">FAQ</a></li>
+        <li><a href="/">Home</a></li>
+        <li><a href="rules">Rules</a></li>
+        <li><a href="arena">Arena</a></li>
+        <li><a href="team">Team</a></li>
+        <li><a href="faq">FAQ</a></li>
       </ul>
       <a href="cfx://connect/monkeyplayzone" class="btn btn-primary mobile-connect-btn">⚡ Connect Now</a>
     </div>
@@ -371,32 +434,29 @@
             <img src="assets/logo.jpg" alt="Monkey Playzone" class="footer-logo" loading="lazy" />
             <p class="footer-tagline">Welcome to the Jungle.</p>
             <p class="footer-desc">The most ruthless hardcore FiveM PvP server. Built by veterans, for warriors.</p>
-            <div class="footer-socials">
-              <a href="#" class="social-icon" title="Twitter" aria-label="Twitter">𝕏</a>
-              <a href="https://discord.gg/monkeyplayzone" target="_blank" rel="noopener noreferrer" class="social-icon" title="Discord" aria-label="Discord">💬</a>
-              <a href="#" class="social-icon" title="YouTube" aria-label="YouTube">▶</a>
-              <a href="#" class="social-icon" title="TikTok" aria-label="TikTok">♪</a>
+                        <div class="footer-socials">
+              <a href="https://discord.gg/aCAvhwjnQx" target="_blank" rel="noopener noreferrer" class="social-icon" title="Discord" aria-label="Discord"><svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg"><path d="M20.317 4.37a19.791 19.791 0 0 0-4.885-1.515.074.074 0 0 0-.079.037c-.21.375-.444.864-.608 1.25a18.27 18.27 0 0 0-5.487 0 12.64 12.64 0 0 0-.617-1.25.077.077 0 0 0-.079-.037A19.736 19.736 0 0 0 3.677 4.37a.07.07 0 0 0-.032.027C.533 9.046-.32 13.58.099 18.057c.002.022.015.043.03.056a19.9 19.9 0 0 0 5.993 3.03.078.078 0 0 0 .084-.028 14.09 14.09 0 0 0 1.226-1.994.076.076 0 0 0-.041-.106 13.107 13.107 0 0 1-1.872-.892.077.077 0 0 1-.008-.128 10.2 10.2 0 0 0 .372-.292.074.074 0 0 1 .077-.01c3.928 1.793 8.18 1.793 12.062 0a.074.074 0 0 1 .078.01c.12.098.246.198.373.292a.077.077 0 0 1-.006.127 12.299 12.299 0 0 1-1.873.892.077.077 0 0 0-.041.107c.36.698.772 1.362 1.225 1.993a.076.076 0 0 0 .084.028 19.839 19.839 0 0 0 6.002-3.03.077.077 0 0 0 .032-.054c.5-5.177-.838-9.674-3.549-13.66a.061.061 0 0 0-.031-.030z"/></svg></a>
             </div>
           </div>
           <div class="footer-col">
             <h4 class="footer-col-title">Navigation</h4>
             <ul class="footer-links">
-              <li><a href="index.html">Home</a></li>
-              <li><a href="rules.html">Rules</a></li>
-              <li><a href="arena.html">Arena</a></li>
+              <li><a href="/">Home</a></li>
+              <li><a href="rules">Rules</a></li>
+              <li><a href="arena">Arena</a></li>
             </ul>
           </div>
           <div class="footer-col">
             <h4 class="footer-col-title">Community</h4>
             <ul class="footer-links">
-              <li><a href="gallery.html">Gallery</a></li>
-              <li><a href="team.html">Team</a></li>
-              <li><a href="faq.html">FAQ</a></li>
+              <li><a href="gallery">Gallery</a></li>
+              <li><a href="team">Team</a></li>
+              <li><a href="faq">FAQ</a></li>
             </ul>
           </div>
           <div class="footer-col">
             <h4 class="footer-col-title">Connect</h4>
-            <p class="footer-ip">cfx.re/join/xllrkdx</p>
+            <p class="footer-ip">cfx.re/join/a4zmokz</p>
             <a href="cfx://connect/monkeyplayzone" class="btn btn-primary btn-sm">⚡ Join Server</a>
           </div>
         </div>
@@ -447,6 +507,7 @@
 
       categoryTiles.forEach(tile => {
         tile.addEventListener('click', () => {
+          tile.classList.add('coming-soon');
           const targetId = tile.getAttribute('data-target');
           categoriesView.style.display = 'none';
           eventsView.style.display = 'block';
@@ -462,46 +523,15 @@
         categoriesView.style.display = 'grid';
       });
 
-      // Arena item modal
+      // Arena items become blurred teaser cards
       document.querySelectorAll('.rules-full-item').forEach(item => {
         item.addEventListener('click', () => {
-          const title   = item.getAttribute('data-title');
-          const details = item.getAttribute('data-details');
-          const rules   = item.getAttribute('data-rules');
-
-          if (title && details && rules) {
-            modalTitle.textContent   = title;
-            modalDetails.textContent = details;
-
-            const rulesArray = rules.split('|');
-            modalRules.innerHTML = '';
-            rulesArray.forEach(rule => {
-              const li = document.createElement('li');
-              li.textContent = rule;
-              modalRules.appendChild(li);
-            });
-
-            modal.style.display = 'flex';
-            setTimeout(() => modal.classList.add('show'), 10);
-          }
+          item.classList.add('coming-soon');
         });
-      });
-
-      const closeModal = () => {
-        modal.classList.remove('show');
-        setTimeout(() => { modal.style.display = 'none'; }, 300);
-      };
-
-      closeModalBtn.addEventListener('click', closeModal);
-
-      window.addEventListener('click', (e) => {
-        if (e.target === modal) closeModal();
-      });
-
-      window.addEventListener('keydown', (e) => {
-        if (e.key === 'Escape' && modal.classList.contains('show')) closeModal();
       });
     });
   </script>
 </body>
 </html>
+
+

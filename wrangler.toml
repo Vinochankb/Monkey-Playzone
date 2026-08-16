@@ -1,0 +1,8 @@
+name = "monkey-playzone"
+main = "worker.js"
+compatibility_date = "2025-01-01"
+
+# Serve static assets from the public/ subdirectory only
+# (keeps node_modules, worker.js, config files out of assets)
+[assets]
+directory = "./public"

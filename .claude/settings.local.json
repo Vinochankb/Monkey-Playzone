@@ -1,0 +1,11 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(rtk ls *)",
+      "Bash(rtk git *)",
+      "Bash(rtk grep *)",
+      "Bash(python -m http.server 8080)",
+      "Bash(curl -s http://localhost:8080/)"
+    ]
+  }
+}

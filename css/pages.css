@@ -557,6 +557,30 @@
   transform: scale(1.05);
 }
 
+.gallery-grid-item.coming-soon .gallery-grid-item-inner,
+.gallery-grid-item.coming-soon .gallery-grid-overlay {
+  filter: blur(4px);
+  opacity: 0.28;
+  transition: filter 0.25s ease, opacity 0.25s ease;
+  pointer-events: none;
+  user-select: none;
+}
+.gallery-grid-item.coming-soon::after {
+  content: 'COMING SOON';
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: clamp(1.8rem, 4vw, 3.4rem);
+  letter-spacing: 0.18em;
+  color: var(--gold);
+  background: linear-gradient(145deg, rgba(10, 5, 5, 0.68), rgba(26, 13, 13, 0.8));
+  text-shadow: 0 0 18px rgba(212, 161, 76, 0.45);
+  pointer-events: none;
+}
+
 /* Dynamic adjustment for pasted images */
 .gallery-grid-item img,
 .gallery-grid > img {
@@ -764,4 +788,78 @@
   color: var(--red-bright);
   flex-shrink: 0;
   margin-top: 1px;
+}
+
+/* ============================================================
+   WHOLE PAGE COMING SOON OVERLAY (HEADER ALONE VISIBLE)
+   ============================================================ */
+body.page-coming-soon {
+  position: relative;
+  overflow: hidden !important;
+}
+
+body.page-coming-soon > *:not(.coming-soon-full-overlay):not(header):not(#navbar):not(.top-nav):not(#mobileMenuOverlay) {
+  filter: blur(12px) brightness(0.6);
+  pointer-events: none !important;
+  user-select: none !important;
+}
+
+body.page-coming-soon header,
+body.page-coming-soon #navbar,
+body.page-coming-soon .top-nav,
+body.page-coming-soon #mobileMenuOverlay {
+  filter: none !important;
+  opacity: 1 !important;
+  pointer-events: auto !important;
+  user-select: auto !important;
+  z-index: 999999 !important;
+}
+
+.coming-soon-full-overlay {
+  position: fixed;
+  top: 72px; /* height of header approx */
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 99998;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background: rgba(10, 5, 5, 0.3); /* highly transparent so blurred bg is visible */
+  text-align: center;
+  padding: 40px 24px;
+}
+
+@media (max-width: 768px) {
+  .coming-soon-full-overlay {
+    top: 62px;
+  }
+}
+
+.coming-soon-full-overlay h1 {
+  font-family: var(--font-display);
+  font-size: clamp(3.5rem, 10vw, 7.5rem);
+  letter-spacing: 0.22em;
+  color: var(--gold);
+  text-shadow: 0 0 35px rgba(212, 161, 76, 0.7), 0 0 70px rgba(199, 44, 44, 0.5);
+  margin-bottom: 16px;
+  text-transform: uppercase;
+  line-height: 1.0;
+}
+
+.coming-soon-full-overlay p {
+  font-family: var(--font-detail);
+  font-size: clamp(1.05rem, 2.5vw, 1.35rem);
+  color: rgba(242, 230, 217, 0.9);
+  max-width: 580px;
+  line-height: 1.65;
+  margin-bottom: 28px;
+}
+
+.coming-soon-full-overlay .cs-actions {
+  display: flex;
+  gap: 16px;
+  flex-wrap: wrap;
+  justify-content: center;
 }

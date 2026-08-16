@@ -1,0 +1,7 @@
+# Cloudflare Workers — Redirect Rules
+# Clean URL rewrites (extensionless → HTML served via worker.js routing)
+/arena      /arena.html   200
+/faq        /faq.html     200
+/gallery    /gallery.html 200
+/rules      /rules.html   200
+/team       /team.html    200

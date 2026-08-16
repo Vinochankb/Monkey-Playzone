@@ -1,0 +1,21 @@
+{
+  "name": "monkey-playzone",
+  "version": "1.0.0",
+  "description": "Monkey Playzone — Cloudflare Workers deployment",
+  "private": true,
+  "scripts": {
+    "sync": "node sync.js",
+    "predev": "npm run sync",
+    "predeploy": "npm run sync",
+    "dev": "wrangler pages dev public",
+    "deploy": "wrangler pages deploy public --project-name monkey-playzone",
+    "tail": "wrangler tail"
+  },
+  "devDependencies": {
+    "wrangler": "^4.122.0"
+  },
+  "allowScripts": {
+    "esbuild@0.28.1": true,
+    "workerd@1.20260811.1": true
+  }
+}

@@ -12,11 +12,18 @@ desktop.ini
 scratch/
 *.py
 
-# ── Node (if ever used for build tools) ─────────────────────
+# ── Node / Wrangler ──────────────────────────────────────────
 node_modules/
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
+package-lock.json
+
+# ── Cloudflare Workers ───────────────────────────────────────
+.wrangler/
+.dev.vars
+# Auto-generated from root files — do not commit
+public/
 
 # ── Editor ──────────────────────────────────────────────────
 .vscode/
