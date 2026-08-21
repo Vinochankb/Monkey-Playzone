@@ -961,6 +961,7 @@ button {
 .footer-logo {
   height: 70px;
   margin-bottom: 16px;
+  mix-blend-mode: screen;
 }
 
 .footer-tagline {
