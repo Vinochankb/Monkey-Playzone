@@ -254,3 +254,126 @@
   fetchServerStatus();
   setInterval(fetchServerStatus, 30000);
 })();
+
+// ============================================================
+// TEAM PAGE JSON FETCHER
+// ============================================================
+(function() {
+  const foundersGrid = document.getElementById('founders-grid');
+  const developersGrid = document.getElementById('developers-grid');
+  const moderatorsGrid = document.getElementById('moderators-grid');
+
+  if (!foundersGrid && !developersGrid && !moderatorsGrid) return;
+
+  function renderCards(members, container) {
+    if (!container || !members) return;
+    let html = '';
+    members.forEach(member => {
+      let avatarHTML = (member.avatarImage && member.avatarImage !== "") 
+        ? `<img src="${member.avatarImage}" alt="${member.name}" style="width:100%; height:100%; border-radius:50%; object-fit:cover;">`
+        : member.avatarInitial;
+      let socialsHTML = '';
+      if (member.socials) {
+        member.socials.forEach(s => { socialsHTML += `<a href="${s.url}" title="${s.platform}">${s.icon}</a>`; });
+      }
+      html += `
+        <div class="staff-card" style="opacity: 0; transform: translateY(20px); transition: opacity 0.5s ease, transform 0.5s ease;">
+          <div class="staff-avatar" style="background: ${member.avatarBackground};">${avatarHTML}</div>
+          <h3 class="staff-name">${member.name}</h3>
+          <span class="staff-role ${member.roleClass}">${member.role}</span>
+          <p style="font-family:var(--font-detail); font-size:0.82rem; color:var(--cream-muted); line-height:1.5;">${member.description}</p>
+          <div class="staff-socials">${socialsHTML}</div>
+        </div>
+      `;
+    });
+    container.innerHTML = html;
+    setTimeout(() => {
+      Array.from(container.children).forEach((card, i) => {
+        setTimeout(() => { card.style.opacity = '1'; card.style.transform = 'translateY(0)'; }, i * 100);
+      });
+    }, 100);
+  }
+
+  fetch('team.json', { cache: 'no-store' })
+    .then(res => res.json())
+    .then(data => {
+      renderCards(data.founders, foundersGrid);
+      renderCards(data.developers, developersGrid);
+      renderCards(data.moderators, moderatorsGrid);
+    })
+    .catch(err => console.error("Error loading team data:", err));
+})();
+
+// ============================================================
+// FAQ PAGE JSON FETCHER
+// ============================================================
+(function() {
+  const faqContainer = document.getElementById('faq-dynamic-container');
+  if (!faqContainer) return;
+
+  fetch('faq.json', { cache: 'no-store' })
+    .then(res => res.json())
+    .then(categories => {
+      let html = '';
+      categories.forEach(category => {
+        html += `<h2 class="faq-category-title">${category.category}</h2>`;
+        category.items.forEach(item => {
+          html += `
+            <div class="faq-item">
+              <button class="faq-q">${item.question}<span class="faq-arrow"></span></button>
+              <div class="faq-a"><div class="faq-a-inner">${item.answer}</div></div>
+            </div>
+          `;
+        });
+      });
+      faqContainer.innerHTML = html;
+      document.querySelectorAll('.faq-q').forEach(btn => {
+        btn.addEventListener('click', () => {
+          const item = btn.closest('.faq-item');
+          const isOpen = item.classList.contains('open');
+          document.querySelectorAll('.faq-item.open').forEach(i => i.classList.remove('open'));
+          if (!isOpen) item.classList.add('open');
+        });
+      });
+    })
+    .catch(err => console.error("Error loading FAQ data:", err));
+})();
+
+// ============================================================
+// RULES PAGE JSON FETCHER
+// ============================================================
+(function() {
+  const rulesContainer = document.getElementById('rules-dynamic-container');
+  if (!rulesContainer) return;
+
+  fetch('rules.json', { cache: 'no-store' })
+    .then(res => res.json())
+    .then(categories => {
+      let html = '';
+      let ruleCounter = 1;
+      categories.forEach(category => {
+        html += `
+          <div class="rules-section">
+            <h2 class="rules-section-title">${category.category}</h2>
+            <div class="rules-full-list">
+        `;
+        category.items.forEach(item => {
+          let numDisplay = item.customNumber ? item.customNumber : String(ruleCounter++).padStart(2, '0');
+          let punishmentHTML = item.punishment ? `<span class="rules-severity ban">${item.punishment}</span>` : '';
+          html += `
+            <div class="rules-full-item">
+              <span class="rules-full-num">${numDisplay}</span>
+              <div class="rules-full-content">
+                <h4>${item.title}</h4>
+                <p>${item.description}</p>
+                ${punishmentHTML}
+              </div>
+            </div>
+          `;
+        });
+        html += `</div></div>`;
+      });
+      rulesContainer.innerHTML = html;
+    })
+    .catch(err => console.error("Error loading Rules data:", err));
+})();

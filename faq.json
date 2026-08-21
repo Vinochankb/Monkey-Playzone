@@ -1,0 +1,78 @@
+[
+  {
+    "category": "Connecting to the Server",
+    "id": "connecting",
+    "items": [
+      {
+        "question": "How do I connect to Monkey Playzone?",
+        "answer": "Open FiveM, click on the search bar, and enter <strong style=\"color:var(--gold);\">cfx.re/join/a4zmokz</strong> or simply search \"Monkey Playzone\" in the server browser. You must have a whitelist approval before connecting. If you try to connect without approval, you'll be queued and automatically rejected."
+      },
+      {
+        "question": "What are the PC requirements?",
+        "answer": "You need to meet FiveM's standard requirements: a licensed copy of GTA V (Steam/Rockstar Launcher), Windows 10 or later, at minimum an Intel i5 / 8GB RAM / GTX 960. For our custom assets to load without lag, we recommend a GTX 1060 or better and an SSD."
+      },
+      {
+        "question": "The server keeps disconnecting me. What do I do?",
+        "answer": "Try the following steps: 1) Clear FiveM cache (Documents/FiveM/FiveM.app/cache). 2) Verify GTA V game files in Rockstar Launcher. 3) Disable VPN if active. 4) Check our #server-status channel in Discord for any ongoing outages. If the issue persists, open a ticket in Discord."
+      },
+      {
+        "question": "Is the server available 24/7?",
+        "answer": "Yes. We maintain a 99.8% uptime SLA on dedicated hardware. Scheduled maintenance windows are announced 48 hours in advance in #announcements. Downtime is typically under 30 minutes."
+      }
+    ]
+  },
+  {
+    "category": "Whitelist & Applications",
+    "id": "whitelist",
+    "items": [
+      {
+        "question": "How do I apply for whitelist?",
+        "answer": "Go to our Discord and fill out the application form. You'll need: your Discord username, FiveM character name, FiveM ID, age, RP experience, and agreement to our rules. Applications are reviewed within 24–72 hours."
+      },
+      {
+        "question": "My application was rejected. Can I reapply?",
+        "answer": "Yes, you may reapply after a 7-day waiting period. Review your rejection reason (sent via Discord DM) and address the issues in your new application. Repeated low-effort applications may result in a temporary application ban."
+      },
+      {
+        "question": "How long does the whitelist review take?",
+        "answer": "Typically 24–72 hours. During high traffic periods (after events or announcements) it may take up to 5 days. You'll receive a DM on Discord once a decision is made. Do not ask admins to speed up your review — it will result in automatic rejection."
+      }
+    ]
+  },
+  {
+    "category": "Rules & Bans",
+    "id": "rules-bans",
+    "items": [
+      {
+        "question": "I was banned. How do I appeal?",
+        "answer": "Open the #ban-appeals channel in our Discord and create a ticket. Include: your in-game name, ban reason shown, and your explanation. Appeals are reviewed by the Head Admin within 72 hours. Note: permanent bans for cheating are non-appealable."
+      },
+      {
+        "question": "What is RDM and why am I banned for it?",
+        "answer": "RDM (Random Death Match) means killing another player without a valid RP reason or prior engagement. Example: shooting someone you just saw without any interaction = RDM. First offence is typically 24 hours + a kill review. Repeated offences escalate to permanent ban."
+      },
+      {
+        "question": "Can I report a player or admin?",
+        "answer": "Yes. Create a ticket in #support on Discord. Include: player name, date/time, description of incident, and any evidence (screenshots/video). For admin misconduct, reports go directly to the Server Owner (KongBoss) via DM — do not post publicly."
+      }
+    ]
+  },
+  {
+    "category": "Store & Donations",
+    "id": "store",
+    "items": [
+      {
+        "question": "Are store purchases pay-to-win?",
+        "answer": "No. Monkey Playzone does not sell gameplay advantages. All purchases are cosmetic (skins, tags, character customizations) or quality-of-life perks (priority queue, extra save slots). No purchasable weapons, stats boosts, or invulnerability."
+      },
+      {
+        "question": "What payment methods do you accept?",
+        "answer": "All major credit/debit cards, PayPal, and select crypto via our Tebex storefront. All transactions are processed securely — we do not store payment information."
+      },
+      {
+        "question": "I purchased a package but didn't receive my perks. What now?",
+        "answer": "Perks are typically applied within 30 minutes. If they haven't appeared after 2 hours: open a #store-support ticket in Discord with your transaction ID and Discord username. We'll resolve it within 24 hours."
+      }
+    ]
+  }
+]

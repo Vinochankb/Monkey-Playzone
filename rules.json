@@ -1,0 +1,140 @@
+[
+  {
+    "category": "I. GENERAL RULES",
+    "items": [
+      {
+        "title": "Fair Play",
+        "description": "The use of cheats, hacks, scripts, macros, mod menus, exploits, or unauthorized third-party software that provides an unfair advantage is strictly prohibited. Exploiting glitches, bugs, or unintended game mechanics is prohibited. If you discover a bug or exploit, report it to staff immediately rather than abusing it.",
+        "punishment": "⚠ Permanent Ban"
+      },
+      {
+        "title": "Respect All Players",
+        "description": "Treat all players, staff, and community members with respect. Harassment, discrimination, hate speech, excessive toxic behavior, and personal attacks are prohibited. Bullying, virtual threats, or encouraging others to target or harass a player are strictly prohibited. Repeated or excessive toxic behavior may result in disciplinary action."
+      },
+      {
+        "title": "No Griefing",
+        "description": "Intentionally ruining another player's experience is prohibited. Repeated trolling, harassment, disruption, or deliberately interfering with other players' gameplay is not permitted."
+      },
+      {
+        "title": "Spawn Camping",
+        "description": "Repeatedly killing players immediately after they spawn in order to deny them a fair opportunity to play is prohibited. Spawn camping or repeatedly targeting players at spawn points may result in punishment."
+      },
+      {
+        "title": "Team Killing",
+        "description": "Intentionally killing teammates in team-based game modes is prohibited. Repeated team damage, intentional sabotage, or deliberately compromising your team's ability to play may result in punishment."
+      },
+      {
+        "title": "Impersonation",
+        "description": "Impersonating staff members, developers, content creators, or other players is strictly prohibited. This includes using similar names, profiles, or other methods intended to deceive or mislead members."
+      },
+      {
+        "title": "Common Sense & Staff Discretion",
+        "description": "Not every possible situation can be covered by written rules. Staff reserve the right to take appropriate action against any behavior that negatively affects the server or community, even if the behavior is not specifically listed in these rules. Staff decisions will be based on the circumstances, evidence, severity, and impact of the situation."
+      }
+    ]
+  },
+  {
+    "category": "II. GAMEPLAY RULES",
+    "items": [
+      {
+        "title": "TDM & Arena Rules",
+        "description": "The Player Menu must not be used inside TDM or Arena zones. Vehicle spawning inside TDM or Arena zones is prohibited. The Player Menu and vehicle spawning are permitted only in the lobby unless otherwise authorized by server features or staff."
+      },
+      {
+        "title": "Safe Zone Exploitation",
+        "description": "Do not abuse safe zones to escape combat, avoid consequences, or gain an unfair advantage. Intentionally entering or manipulating safe zones to exploit combat mechanics is prohibited."
+      },
+      {
+        "title": "Combat Logging",
+        "description": "Disconnecting from or intentionally leaving a match to avoid death, punishment, defeat, or other gameplay consequences is prohibited. Repeated combat logging may result in temporary or permanent punishment depending on severity."
+      },
+      {
+        "title": "Command Abuse",
+        "description": "Commands must only be used for their intended purpose. Abusing commands to gain an unfair advantage, disrupt gameplay, harass players, or negatively affect the server is prohibited."
+      },
+      {
+        "title": "Unauthorized Teleportation",
+        "description": "Teleportation is permitted only through authorized server features or with staff approval. Unauthorized teleportation, teleport exploits, or abuse of teleport commands to gain an advantage is prohibited."
+      }
+    ]
+  },
+  {
+    "category": "III. COMMUNITY CONDUCT",
+    "items": [
+      {
+        "title": "No Cross-Server Drama",
+        "description": "Do not bring conflicts, rivalries, disputes, or personal issues from other FiveM communities onto this server. Provoking, harassing, or targeting players because of incidents that occurred on another server is prohibited.",
+        "punishment": "⚠ Immediate Permanent Ban"
+      },
+      {
+        "title": "Respectful Usernames",
+        "description": "Player names must not: Contain offensive, hateful, or discriminatory language; Contain racial, religious, or discriminatory references intended to offend; Contain sexually explicit content; Impersonate another player, staff member, developer, or content creator; Falsely represent another gang, clan, organization, or community without permission. Staff may require a player to change their username or issue further punishment depending on the violation."
+      },
+      {
+        "title": "Staff Authority",
+        "description": "Players must respect all staff members and follow reasonable staff instructions. Staff decisions are to be respected during active situations. If you disagree with a staff decision, use the appropriate support or appeal system rather than arguing in-game or in public channels. Abuse, harassment, or disrespect toward staff will not be tolerated."
+      }
+    ]
+  },
+  {
+    "category": "IV. DISCORD RULES",
+    "items": [
+      {
+        "title": "Respect & Conduct",
+        "description": "Treat all Discord members with respect regardless of skill level, status, or background. Harassment, discrimination, hate speech, excessive toxicity, and personal attacks are prohibited."
+      },
+      {
+        "title": "No Spam",
+        "description": "The following are prohibited: Message spam, Emoji/reaction spam, Mention spam, Chat flooding, Repeated invitations, Unsolicited advertising, Repeated or disruptive messages."
+      },
+      {
+        "title": "No Malicious Content",
+        "description": "The following are strictly prohibited: IP grabbers, Keyloggers, Malware, Phishing links, Scam links, Fake downloads, Other malicious software or content.",
+        "punishment": "⚠ Immediate Permanent Ban"
+      },
+      {
+        "title": "NSFW & Graphic Content",
+        "description": "NSFW, sexually explicit, or excessively graphic/gore content is prohibited outside channels specifically designated and permitted for such content. Content must comply with Discord's rules and applicable server restrictions."
+      },
+      {
+        "title": "Stay On Topic",
+        "description": "Keep discussions relevant to the channel in which they are posted. Repeatedly derailing discussions or intentionally disrupting channels may result in punishment."
+      },
+      {
+        "title": "Respect Privacy",
+        "description": "Do not share another person's private or personal information without their permission, including: Personal information, Private messages, Addresses, Phone numbers, Private photographs, Other sensitive personal information."
+      },
+      {
+        "title": "Sensitive Topics",
+        "description": "Discussions involving politics, religion, race, nationality, or sexual orientation should not be used to provoke, harass, attack, or create conflict between members."
+      },
+      {
+        "title": "Voice Chat Rules",
+        "description": "Mic spam is prohibited. Do not intentionally disrupt or disturb voice channels. Do not repeatedly move, disconnect, or interfere with other users. Use Push-to-Talk or appropriate microphone settings if your microphone causes excessive background noise."
+      },
+      {
+        "title": "Bot Commands",
+        "description": "Use bot commands only in designated bot channels unless otherwise permitted. Do not abuse commands to spam, disrupt, harass, or gain an unfair advantage."
+      },
+      {
+        "title": "Discord Terms of Service",
+        "description": "All members must comply with Discord's Terms of Service and Community Guidelines. Violations of Discord policies may also result in server punishment."
+      }
+    ]
+  },
+  {
+    "category": "V. PUNISHMENT POLICY & FINAL NOTICE",
+    "items": [
+      {
+        "title": "Punishment Levels",
+        "customNumber": "V",
+        "description": "Staff may determine the appropriate punishment based on the severity, frequency, intent, evidence, and impact of the violation.<br><br><ul><li><strong>Verbal Warning:</strong> Used for minor or first-time violations.</li><li><strong>Official Warning:</strong> Formal warning for repeated or more serious violations.</li><li><strong>Temporary Kick:</strong> Removal from the server for a specified period or situation.</li><li><strong>Temporary Ban:</strong> Temporary restriction from accessing the server.</li><li><strong>Permanent Ban:</strong> Permanent removal from the server.</li></ul><br><h4>Immediate Permanent Ban</h4><p>Severe violations may result in an immediate permanent ban without prior warnings, including but not limited to: Cheating or use of unauthorized software, Serious exploitation or abuse of game-breaking glitches, Malicious links, malware, phishing, or scams, Ban evasion, Severe harassment or threats, Cross-server provocation or drama, Serious attacks against the community or its members.</p>"
+      },
+      {
+        "title": "Final Notice",
+        "customNumber": "VI",
+        "description": "By participating in this server, you agree to follow these rules and respect the decisions of the staff team. Ignorance of the rules is not considered an excuse for violating them. Staff reserve the right to modify, update, or clarify these rules when necessary to maintain a fair, safe, and enjoyable community."
+      }
+    ]
+  }
+]
