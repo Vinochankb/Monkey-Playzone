@@ -8,7 +8,7 @@
     "predev": "npm run sync",
     "predeploy": "npm run sync",
     "dev": "wrangler pages dev public",
-    "deploy": "wrangler pages deploy public --project-name monkey-playzone",
+    "deploy": "wrangler pages deploy public --project-name monkey-playzone --branch main",
     "tail": "wrangler tail"
   },
   "devDependencies": {
